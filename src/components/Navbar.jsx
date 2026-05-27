@@ -33,7 +33,6 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4 text-white/70">
           <a href="https://github.com/Rxn321" className="hover:text-white transition"><AiFillGithub size={25} /></a>
           <a href="https://www.linkedin.com/in/ryantyl/" className="hover:text-white transition"><FaLinkedin size={25} /></a>
-          <a href="mailto:liuryanty@gmail.com" className="hover:text-white transition"><MdEmail size={25} /></a>
         </div>
 
 
@@ -58,7 +57,6 @@ export default function Navbar() {
             <div className="flex justify-center gap-6 pt-2 border-t border-white/10">
               <a href="https://github.com/Rxn321"><AiFillGithub size={22} /></a>
               <a href="https://www.linkedin.com/in/ryantyl/"><FaLinkedin size={22} /></a>
-              <a href="mailto:liuryanty@gmail.com"><MdEmail size={22} /></a>
               <a href="#projects" className="hover:text-white transition"><AiOutlineStock size={22} /></a>
             </div>
           </div>
@@ -69,4 +67,4 @@ export default function Navbar() {
   );
 }
 
-   {/*Update link to optimization project*/}
+   {/*Update link to project*/}

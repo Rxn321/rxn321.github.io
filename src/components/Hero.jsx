@@ -19,15 +19,6 @@ export default function Hero() {
          —I'm a second year applied mathematics student at the University of British Columbia. 
         I have a background in IT support and I enjoy building hand-on projects that combine data and real-world applications.
         </p>
-
-        <div className="mt-10 flex gap-1 justify-center w-full">
-          <a
-            href="#projects"
-            className="px-6 py-3 rounded-full bg-sky-50 !text-black font-medium hover:scale-105 transition"
-          >
-            View Projects
-          </a>
-        </div>
       </motion.div>
 
 <div className="bg-white p-3 pb-6 shadow-xl rotate-[-4deg] hover:rotate-0 transition duration-300"> 
