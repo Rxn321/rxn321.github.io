@@ -28,7 +28,7 @@ const item = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="max-w-4xl mx-auto px-6 py-40">
+    <section id="projects" className="max-w-4xl mx-auto px-6 py-30">
 
       <motion.div
         variants={container}

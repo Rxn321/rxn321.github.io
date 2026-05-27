@@ -6,13 +6,13 @@ import { motion } from "framer-motion"
 
 export default function About() {
   return (
-    <motion.div
+  <motion.div
   initial={{ opacity: 0, y: 60 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true, amount: 0.3 }}
   transition={{ duration: 0.6, ease: "easeOut" }}
   >
-    <section id="about" className="max-w-4xl mx-auto px-6 py-10 space-y-6">
+    <section id="about" className="max-w-4xl mx-auto px-6 py-30 space-y-6">
       <h2 className="text-3xl font-semibold mb-4">About</h2>
       <p className="text-white/90 leading-relaxed">
         UBC Math student working across IT, mechanical design, and data. I like turning ideas into systems that actually work.
