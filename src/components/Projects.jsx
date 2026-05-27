@@ -28,7 +28,7 @@ const item = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="max-w-4xl mx-auto px-6 py-24">
+    <section id="projects" className="max-w-4xl mx-auto px-6 py-40">
 
       <motion.div
         variants={container}
@@ -47,7 +47,7 @@ export default function Projects() {
             className="p-6 rounded-2xl bg-white/3 border border-white/10 transition-colors duration-300 hover:bg-white/5"
           >
             <h3 className="font-semibold">Portfolio Website</h3>
-            <p className="text-white/60 text-sm mt-2">
+            <p className="text-white/90 text-sm mt-2">
               Developed a personal portfolio website using React and Tailwind CSS to showcase my projects and skills,
               featuring responsive design and smooth animations with Framer Motion.
             </p>
@@ -72,7 +72,7 @@ export default function Projects() {
             className="p-6 rounded-2xl bg-white/3 border border-white/10 transition-colors duration-300 hover:bg-white/5"
           >
             <h3 className="font-semibold">Portfolio Optimization</h3>
-            <p className="text-white/60 text-sm mt-2">
+            <p className="text-white/90 text-sm mt-2">
               Python-based data analysis project for portfolio optimization using historical stock data to evaluate risk and returns and improve investment decisions.
               So i can stop losing money on stocks.
             </p>
@@ -98,7 +98,7 @@ export default function Projects() {
             className="p-6 rounded-2xl bg-white/3 border border-white/10 transition-colors duration-300 hover:bg-white/5"
           >
             <h3 className="font-semibold">UBC Rocket</h3>
-            <p className="text-white/60 text-sm mt-2">
+            <p className="text-white/90 text-sm mt-2">
               Worked on the UBC Rocket team for the 2025 “Cloudburst” competition rocket, using SolidWorks and Fusion 360 for CAD design. 
               Applied machining techniques including CNC, lathe, waterjet, and milling, along with 3D printing and engineering analysis.
             </p>
