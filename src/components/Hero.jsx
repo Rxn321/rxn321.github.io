@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
-    <main className="flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-48 md:pt-69 gap-8 md:gap-12 text-center md:text-left">
+    <main id="hero" className="flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-48 md:pt-69 gap-8 md:gap-12 text-center md:text-left">
 
       <motion.div
         initial={{ opacity: 0, y: -40, filter: "blur(10px)" }}
