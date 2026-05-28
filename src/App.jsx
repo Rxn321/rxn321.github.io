@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Projects from './components/Projects'
 import Contacts from './components/Contacts'
+import Toggle from './components/Toggle'
 
 function App() {
   const [scrolledPast, setScrolledPast] = useState(false)
+  const [darkMode, setDarkMode] = useState(false)
+
+  const toggleTheme = () => {
+    setDarkMode(prev => !prev)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,35 +27,55 @@ function App() {
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
-
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden text-white">
-      
-{/* Background */}
-    <div className="fixed inset-0 z-10 bg-gradient-to-b from-zinc-800 via-neutral-700 to-stone-700"/>
-    
-{/* Overlay */}
+    <div
+      className={`relative min-h-screen overflow-x-hidden transition-colors duration-500 ${
+        darkMode ? "text-white" : "text-black"
+      }`}
+    >
+
+      {/* Background */}
+      <div
+        className={`fixed inset-0 z-0 bg-gradient-to-b transition-colors duration-500 ${
+          darkMode
+            ? "from-zinc-800 via-neutral-700 to-stone-700"
+            : "white"
+        }`}
+      />
+
+      {/* Overlay */}
       <motion.div
-        className="fixed inset-0 z-10 bg-gradient-to-b from-orange-300/50 via-zinc-600/30 to-neutral-700/10"
+        className={`fixed inset-0 z-10 bg-gradient-to-b ${
+          darkMode
+            ? "from-orange-300/50 via-zinc-600/30 to-neutral-700/10"
+            : "from-orange-200/40 via-slate-300/40 to-white/20"
+        }`}
         animate={{
           y: scrolledPast ? "-130%" : "0%",
-          skewY: scrolledPast ? -12 : 0
+          skewY: scrolledPast ? -16 : 0
         }}
         transition={{
-          type: "spring",
-          stiffness: 90,
-          damping: 18
+          type: "tween",
+          duration: 0.9,
+          ease: "easeInOut"
         }}
         style={{
           transformOrigin: "top"
         }}
       />
+      {/* Navbar */}
+      <div className="fixed top-6 left-0 w-full z-50 flex justify-center">
+        <div className="relative flex items-center justify-between w-[95%] max-w-4xl">
+          <Navbar darkMode={darkMode} />
+          <Toggle darkMode={darkMode} toggleTheme={toggleTheme} />
+        </div>
+      </div>
 
+      {/* Content */}
       <div className="relative z-20">
-        <Navbar />
         <Hero />
         <About />
         <Projects />
