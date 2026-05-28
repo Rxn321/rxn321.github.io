@@ -19,7 +19,7 @@ function App() {
     const handleScroll = () => {
       const y = window.scrollY
 
-      if (y > window.innerHeight * 0.15) {
+      if (y > window.innerHeight * 0.30) {
         setScrolledPast(true)
       } else {
         setScrolledPast(false)
@@ -50,8 +50,8 @@ function App() {
       <motion.div
         className={`fixed inset-0 z-10 bg-gradient-to-b ${
           darkMode
-            ? "from-orange-300/50 via-zinc-600/30 to-neutral-700/10"
-            : "from-orange-200/40 via-slate-300/40 to-white/20"
+            ? "from-orange-300/40 via-zinc-600/30 to-neutral-700/10"
+            : "from-indigo-300/40 via-white-200/40 to-white/20"
         }`}
         animate={{
           y: scrolledPast ? "-130%" : "0%",
@@ -76,10 +76,10 @@ function App() {
 
       {/* Content */}
       <div className="relative z-20">
-        <Hero />
-        <About />
-        <Projects />
-        <Contacts />
+        <Hero darkMode={darkMode} />
+        <About darkMode={darkMode} />
+        <Projects darkMode={darkMode} />
+        <Contacts darkMode={darkMode} />
       </div>
 
     </div>
