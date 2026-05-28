@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
-    <main className="flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-24 gap-8 md:gap-12 text-center md:text-left">
+    <main className="flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-48 md:pt-69 gap-8 md:gap-12 text-center md:text-left">
 
       <motion.div
         initial={{ opacity: 0, y: -40, filter: "blur(10px)" }}
@@ -22,7 +22,7 @@ export default function Hero() {
       </motion.div>
 
 <div className="bg-white p-3 pb-6 shadow-xl rotate-[-4deg] hover:rotate-0 transition duration-300"> 
-  <img src={me} alt="Ryan" className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-md shadow-xl"/> 
+  <img src={me} alt="Ryan" className="w-32 h-32 md:w-64 md:h-64 object-cover rounded-md shadow-xl"/> 
     </div>
     </main>
   )

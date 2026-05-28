@@ -12,7 +12,7 @@ export default function About() {
   viewport={{ once: true, amount: 0.3 }}
   transition={{ duration: 0.6, ease: "easeOut" }}
   >
-    <section id="about" className="max-w-4xl mx-auto px-6 py-30 space-y-6">
+    <section id="about" className="max-w-4xl mx-auto px-6 pt-48 md:pt-80 space-y-6">
       <h2 className="text-3xl font-semibold mb-4">About</h2>
       <p className="text-white/90 leading-relaxed">
         UBC Math student working across IT, mechanical design, and data. I like turning ideas into systems that actually work.
