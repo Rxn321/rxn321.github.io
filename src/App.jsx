@@ -30,11 +30,11 @@ function App() {
     <div className="relative min-h-screen overflow-x-hidden text-white">
       
 {/* Background */}
-    <div className="fixed inset-0 z-10 bg-gradient-to-b from-zinc-800 via-neutral-700 to-stone-600"/>
+    <div className="fixed inset-0 z-10 bg-gradient-to-b from-zinc-800 via-neutral-700 to-stone-700"/>
     
 {/* Overlay */}
       <motion.div
-        className="fixed inset-0 z-10 bg-gradient-to-b from-orange-300/50 via-zinc-500/30 to-neutral-600/10"
+        className="fixed inset-0 z-10 bg-gradient-to-b from-orange-300/50 via-zinc-600/30 to-neutral-700/10"
         animate={{
           y: scrolledPast ? "-130%" : "0%",
           skewY: scrolledPast ? -12 : 0
