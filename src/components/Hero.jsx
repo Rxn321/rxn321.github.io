@@ -1,16 +1,14 @@
-import me from "../assets/me.jpg"
-import { motion } from "framer-motion"
+import me from "../assets/me.jpg";
+import { motion } from "framer-motion";
+import { getTheme } from "../styles/theme";
 
 export default function Hero({ darkMode }) {
-  const textMain = darkMode ? "text-white" : "text-black"
-  const textMuted = darkMode ? "text-white/80" : "text-black/70"
-  const cardBg = darkMode ? "bg-white" : "bg-white"
-  const cardShadow = darkMode ? "shadow-xl" : "shadow-md"
+  const theme = getTheme(darkMode);
 
   return (
     <main
       id="hero"
-      className={`flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-48 md:pt-40 gap-8 md:gap-12 text-center md:text-left transition-colors duration-500 ${textMain}`}
+      className={`flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-48 md:pt-40 gap-8 md:gap-12 text-center md:text-left transition-colors duration-500 ${theme.text.strong}`}
     >
 
       {/* Text */}
@@ -24,7 +22,7 @@ export default function Hero({ darkMode }) {
           Hi, I’m Ryan
         </h1>
 
-        <p className={`mt-6 text-lg ${textMuted}`}>
+        <p className={`mt-6 text-lg ${theme.text.muted}`}>
           —I'm a second year applied mathematics student at UBC.
           I have a background in IT support and I enjoy building hands-on projects that combine data and real-world applications.
         </p>
@@ -32,7 +30,7 @@ export default function Hero({ darkMode }) {
 
       {/* Image */}
       <div
-        className={`${cardBg} p-3 pb-6 ${cardShadow} rotate-[-4deg] hover:rotate-0 transition duration-300`}
+        className={`${theme.card.bg} p-3 pb-6 ${theme.card.shadow} rotate-[-4deg] hover:rotate-0 transition duration-300`}
       >
         <img
           src={me}
@@ -42,5 +40,5 @@ export default function Hero({ darkMode }) {
       </div>
 
     </main>
-  )
+  );
 }

@@ -42,7 +42,7 @@ function App() {
         className={`fixed inset-0 z-0 bg-gradient-to-b transition-colors duration-500 ${
           darkMode
             ? "from-zinc-800 via-neutral-700 to-stone-700"
-            : "white"
+            : "from-white via-slate-100 to-slate-200"
         }`}
       />
 
@@ -51,7 +51,7 @@ function App() {
         className={`fixed inset-0 z-10 bg-gradient-to-b ${
           darkMode
             ? "from-orange-300/40 via-zinc-600/30 to-neutral-700/10"
-            : "from-indigo-300/40 via-white-200/40 to-white/20"
+            : "from-indigo-300/40 via-white/40 to-white/20"
         }`}
         animate={{
           y: scrolledPast ? "-130%" : "0%",
