@@ -8,7 +8,8 @@ export default function Hero({ darkMode }) {
   return (
     <main
       id="hero"
-      className={`flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-48 md:pt-40 gap-8 md:gap-12 text-center md:text-left transition-colors duration-500 ${theme.text.strong}`}
+      className={`flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-48 md:pt-40 gap-8 md:gap-12 text-center 
+      md:text-left transition-colors duration-500 ${theme.hero.textMain}`}
     >
 
       {/* Text */}
@@ -18,11 +19,11 @@ export default function Hero({ darkMode }) {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="max-w-xl"
       >
-        <h1 className="text-5xl md:text-7xl font-semibold tracking-tight">
+        <h1 className="text-5xl md:text-7xl font-semibold font-hero tracking-tight">
           Hi, I’m Ryan
         </h1>
 
-        <p className={`mt-6 text-lg ${theme.text.muted}`}>
+        <p className={`mt-6 text-xl font-mono ${theme.hero.textMuted}`}>
           —I'm a second year applied mathematics student at UBC.
           I have a background in IT support and I enjoy building hands-on projects that combine data and real-world applications.
         </p>
@@ -30,7 +31,7 @@ export default function Hero({ darkMode }) {
 
       {/* Image */}
       <div
-        className={`${theme.card.bg} p-3 pb-6 ${theme.card.shadow} rotate-[-4deg] hover:rotate-0 transition duration-300`}
+        className={`${theme.hero.cardBg} p-3 pb-6 ${theme.hero.shadow} rotate-[-4deg] hover:rotate-0 transition duration-300`}
       >
         <img
           src={me}

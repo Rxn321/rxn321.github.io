@@ -18,7 +18,7 @@ export default function Toggle({ darkMode, toggleTheme }) {
 
         <motion.div
         animate={{
-            y: darkMode ? -12 : 12
+            y: darkMode ? 12 : -12
         }}
         transition={{
             type: "spring",
@@ -28,8 +28,8 @@ export default function Toggle({ darkMode, toggleTheme }) {
         className={`w-7 h-7 rounded-full flex items-center justify-center shadow-md
             ${
             darkMode
-                ? "bg-white/10 text-amber-200"
-                : "text-white"
+                ? "bg-white/10 text-amber-200/90"
+                : "bg-white/10 text-white"
             }
         `}
         >

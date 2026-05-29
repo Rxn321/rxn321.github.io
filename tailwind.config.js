@@ -3,6 +3,11 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["sans", "sans-serif"],
+        hero: ["Zen Dots", "sans-serif"],
+        mono: ["DM Mono", "monospace"],
+      },
       animation: {
         drop: "drop 0.6s ease-out",
       },
