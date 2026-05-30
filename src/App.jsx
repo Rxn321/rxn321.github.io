@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
-import ProjectsDisplay from './components/ProjectsDisplay'
+import Projects from "./components/ProjectsDisplay"
 import Contacts from './components/Contacts'
 import Toggle from './components/Toggle'
 import Experiences from "./components/Experiences"
@@ -80,7 +80,7 @@ function App() {
         <Hero darkMode={darkMode} />
         <About darkMode={darkMode} />
         {/* <Experiences darkMode={darkMode} /> */}      {/* Doesnt have enough yet */}
-        <ProjectsDisplay darkMode={darkMode} />
+        <Projects darkMode={darkMode} />
         <Contacts darkMode={darkMode} />
       </div>
 

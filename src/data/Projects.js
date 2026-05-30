@@ -11,6 +11,12 @@ export const projects = [
     tags: ["Python", "Data"],
     link: "https://github.com/Rxn321/Portfolio-Optimization",
   },
+    {
+    title: "smtsmt",
+    desc: "blahhblahhblahh",
+    tags: ["CAD", "FEA"],
+    link: "https://www.ubcrocket.com/project-COTS.html#subteam-A",
+  },
   {
     title: "UBC Rocket",
     desc: "CAD + manufacturing for Cloudburst rocket project.",
