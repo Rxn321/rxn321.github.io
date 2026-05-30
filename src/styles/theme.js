@@ -16,6 +16,7 @@ export const getTheme = (darkMode) => ({
     border: darkMode ? "border-white/10" : "border-black/10",
     borderStrong: darkMode ? "border-white/20" : "border-black/10",
     shadow: darkMode ? "shadow-xl" : "shadow-md",
+    scrollbar: darkMode ? "scrollbar-thumb-white/20" : "scrollbar-thumb-black/20",
   },
 
   ui: {

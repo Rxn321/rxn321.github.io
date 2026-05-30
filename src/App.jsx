@@ -79,8 +79,8 @@ function App() {
       <div className="relative z-20">
         <Hero darkMode={darkMode} />
         <About darkMode={darkMode} />
-        <Experiences darkMode={darkMode} />
-        <Projects darkMode={darkMode} />
+        {/* <Experiences darkMode={darkMode} /> */}      {/* Doesnt have enough yet */}
+        <ProjectsDisplay darkMode={darkMode} />
         <Contacts darkMode={darkMode} />
       </div>
 

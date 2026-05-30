@@ -1,129 +1,168 @@
-import rocket1 from "../assets/rocket-1.jpg";
-import rocket2 from "../assets/meAndRocket.jpg";
-import plate from "../assets/plate.jpg";
+import { useEffect, useRef, useState } from "react"
+import { motion, useMotionValue } from "framer-motion"
+import { getTheme } from "../styles/theme"
 
-import { motion } from "framer-motion";
-import { getTheme } from "../styles/theme";
-
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.05,
-    },
+const projects = [
+  {
+    title: "Portfolio Website",
+    desc: "React + Tailwind portfolio with smooth animations.",
+    tags: ["React", "Tailwind"],
   },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 10 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      ease: [0.25, 0.1, 0.25, 1],
-    },
+  {
+    title: "Portfolio Optimization",
+    desc: "Python-based stock analysis tool for risk optimization.",
+    tags: ["Python", "Data"],
   },
-};
+  {
+    title: "UBC Rocket",
+    desc: "CAD + manufacturing for Cloudburst rocket project.",
+    tags: ["CAD", "FEA"],
+  },
+]
 
 export default function Projects({ darkMode }) {
-  const theme = getTheme(darkMode);
+  const theme = getTheme(darkMode)
+
+  const containerRef = useRef(null)
+  const x = useMotionValue(0)
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const looped = [...projects, ...projects]
+
+  // ---------- infinite scroll ----------
+  useEffect(() => {
+    let pos = 0
+    let frame
+
+    const speed = 0.5
+
+    const animate = () => {
+      pos -= speed
+
+      if (containerRef.current) {
+        const width = containerRef.current.scrollWidth / 2
+        if (Math.abs(pos) >= width) pos = 0
+      }
+
+      x.set(pos)
+      frame = requestAnimationFrame(animate)
+    }
+
+    animate()
+    return () => cancelAnimationFrame(frame)
+  }, [x])
+
+  // ---------- center detection ----------
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!containerRef.current) return
+
+      const cards = containerRef.current.children
+      const containerRect = containerRef.current.getBoundingClientRect()
+      const centerX = containerRect.left + containerRect.width / 2
+
+      let closest = 0
+      let minDist = Infinity
+
+      Array.from(cards).forEach((card, i) => {
+        const rect = card.getBoundingClientRect()
+        const cardCenter = rect.left + rect.width / 2
+        const dist = Math.abs(centerX - cardCenter)
+
+        if (dist < minDist) {
+          minDist = dist
+          closest = i % projects.length
+        }
+      })
+
+      setActiveIndex(closest)
+    }, 100)
+
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <section
       id="projects"
-      className={`max-w-4xl mx-auto px-6 pt-80 transition-colors duration-500 ${theme.text.main}`}
+      className={`max-w-6xl mx-auto px-6 py-40 overflow-hidden ${theme.text.main}`}
     >
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.3 }}
-      >
-        <h2 className="text-3xl font-semibold mb-8">
-          Projects
-        </h2>
+      <h2 className="text-3xl font-semibold mb-10">
+        Projects
+      </h2>
 
-        <div className="grid gap-10 md:grid-cols-1">
+      <div className="relative overflow-hidden">
+        {/* fade edges */}
+        <div className="pointer-events-none absolute inset-0 z-10 mask-fade" />
 
-          {/* Project 1 */}
-          <motion.div
-            variants={item}
-            className={`${theme.card.bg} border ${theme.card.border} p-6 rounded-2xl transition-colors duration-300 ${theme.card.hoverBg}`}
-          >
-            <h3 className="font-semibold">Portfolio Website</h3>
+        <motion.div
+          ref={containerRef}
+          style={{ x }}
+          className="flex gap-6 w-max"
+        >
+          {looped.map((project, i) => {
+            const isActive =
+              i % projects.length === activeIndex
 
-            <p className={`text-sm mt-2 ${theme.text.muted}`}>
-              Developed a personal portfolio website using React and Tailwind CSS to showcase my projects and skills,
-              featuring responsive design and smooth animations with Framer Motion.
-            </p>
+            return (
+              <div
+                key={i}
+                className={`
+                  w-[320px]
+                  h-[240px]
+                  flex-shrink-0
+                  rounded-2xl
+                  border
+                  backdrop-blur-md
+                  p-6
+                  shadow-lg
+                  transition-all duration-500 ease-in-out
 
-            <div className="flex gap-2 flex-wrap mt-3">
-              <span className={`text-xs ${theme.card.bg} px-3 py-1 rounded-full`}>
-                You are here 📍
-              </span>
-            </div>
+                  ${
+                    isActive
+                      ? "opacity-100 border-orange-300/40 shadow-[0_0_40px_rgba(251,146,60,0.15)]"
+                      : "opacity-60 border-white/10"
+                  }
 
-            <a href="https://github.com/Rxn321/Portfolio-Website" target="_blank">
-              <button className="mt-4 px-4 py-2 text-sm hover:text-blue-400 transition">
-                View Project →
-              </button>
-            </a>
-          </motion.div>
+                  ${theme.card.bg}
+                `}
+              >
+                <h3
+                  className={`
+                    text-lg font-semibold mb-2 transition-all duration-500
+                    ${
+                      isActive
+                        ? "text-orange-300"
+                        : theme.text.main
+                    }
+                  `}
+                >
+                  {project.title}
+                </h3>
 
-          {/* Project 2 */}
-          <motion.div
-            variants={item}
-            className={`${theme.card.bg} border ${theme.card.border} p-6 rounded-2xl transition-colors duration-300 ${theme.card.hoverBg}`}
-          >
-            <h3 className="font-semibold">Portfolio Optimization</h3>
+                <p className={`text-sm ${theme.text.muted}`}>
+                  {project.desc}
+                </p>
 
-            <p className={`text-sm mt-2 ${theme.text.muted}`}>
-              Python-based data analysis project for portfolio optimization using historical stock data to evaluate risk and returns and improve investment decisions.
-              So I can stop losing money on stocks.
-            </p>
+                <div className="flex gap-2 flex-wrap mt-4">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className={`text-xs px-3 py-1 rounded-full border ${theme.card.border}`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-            <div className="flex gap-2 flex-wrap mt-3">
-              <span className={`text-xs ${theme.card.bg} px-3 py-1 rounded-full`}>Python</span>
-              <span className={`text-xs ${theme.card.bg} px-3 py-1 rounded-full`}>Data Analysis</span>
-              <span className={`text-xs ${theme.card.bg} px-3 py-1 rounded-full`}>Optimization</span>
-            </div>
-
-            <a href="https://github.com/Rxn321/Portfolio-Optimization" target="_blank">
-              <button className="mt-4 px-4 py-2 text-sm hover:text-blue-400 transition">
-                View Project →
-              </button>
-            </a>
-          </motion.div>
-
-          {/* Project 3 */}
-          <motion.div
-            variants={item}
-            className={`${theme.card.bg} border ${theme.card.border} p-6 rounded-2xl transition-colors duration-300 ${theme.card.hoverBg}`}
-          >
-            <h3 className="font-semibold">UBC Rocket</h3>
-
-            <p className={`text-sm mt-2 ${theme.text.muted}`}>
-              Worked on the UBC Rocket team for the 2025 “Cloudburst” competition rocket, using SolidWorks and Fusion 360 for CAD design.
-              Applied machining techniques including CNC, lathe, waterjet, and milling, along with 3D printing and engineering analysis.
-            </p>
-
-            <div className="flex gap-2 flex-wrap mt-3">
-              <span className={`text-xs ${theme.card.bg} px-3 py-1 rounded-full`}>CAD</span>
-              <span className={`text-xs ${theme.card.bg} px-3 py-1 rounded-full`}>FEA</span>
-              <span className={`text-xs ${theme.card.bg} px-3 py-1 rounded-full`}>Manufacturing</span>
-            </div>
-
-            <a href="https://www.ubcrocket.com/project-COTS.html#subteam-A" target="_blank">
-              <button className="mt-4 px-4 py-2 text-sm hover:text-blue-400 transition">
-                View Project →
-              </button>
-            </a>
-          </motion.div>
-
-        </div>
-      </motion.div>
+                {/* glow indicator */}
+                {isActive && (
+                  <div className="mt-5 h-1 w-16 bg-orange-300/40 rounded-full blur-[1px]" />
+                )}
+              </div>
+            )
+          })}
+        </motion.div>
+      </div>
     </section>
-  );
+  )
 }
