@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["sans", "sans-serif"],
-        hero: ["Zen Dots", "sans-serif"],
+        serif: ["Cactus Classical Serif", "serif"],
         mono: ["DM Mono", "monospace"],
       },
       animation: {

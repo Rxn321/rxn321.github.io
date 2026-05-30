@@ -6,6 +6,7 @@ import About from './components/About'
 import Projects from './components/Projects'
 import Contacts from './components/Contacts'
 import Toggle from './components/Toggle'
+import Experiences from "./components/Experiences"
 
 function App() {
   const [scrolledPast, setScrolledPast] = useState(false)
@@ -78,6 +79,7 @@ function App() {
       <div className="relative z-20">
         <Hero darkMode={darkMode} />
         <About darkMode={darkMode} />
+        <Experiences darkMode={darkMode} />
         <Projects darkMode={darkMode} />
         <Contacts darkMode={darkMode} />
       </div>

@@ -1,7 +1,7 @@
 export const getTheme = (darkMode) => ({
   text: {
-    main: darkMode ? "text-white/90" : "text-black/90",
-    muted: darkMode ? "text-white/60" : "text-black/80",
+    main: darkMode ? "text-white/90" : "text-black/80",
+    muted: darkMode ? "text-white/90" : "text-black/70",
     strong: darkMode ? "text-white" : "text-black",
   },
   hero: {
