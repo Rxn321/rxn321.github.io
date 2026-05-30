@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
-import Projects from './components/Projects'
+import ProjectsDisplay from './components/ProjectsDisplay'
 import Contacts from './components/Contacts'
 import Toggle from './components/Toggle'
 import Experiences from "./components/Experiences"
