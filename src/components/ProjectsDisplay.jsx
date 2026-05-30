@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react"
 import { motion, useMotionValue } from "framer-motion"
 
-export default function ProjectsDisplay({ projects, theme }) {
+export default function ProjectsDisplay({ projects = [], theme }) {
   const containerRef = useRef(null)
   const x = useMotionValue(0)
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const looped = [...projects, ...projects]
+  // safety guard (prevents crash)
+  const safeProjects = Array.isArray(projects) ? projects : []
+  const looped = [...safeProjects, ...safeProjects]
 
-  // ---------------------------
-  // Infinite smooth scrolling
-  // ---------------------------
+  // ---------------- infinite scroll ----------------
   useEffect(() => {
     let pos = 0
     let frame
@@ -32,28 +32,26 @@ export default function ProjectsDisplay({ projects, theme }) {
     return () => cancelAnimationFrame(frame)
   }, [x])
 
-  // ---------------------------
-  // Center detection (no resizing)
-  // ---------------------------
+  // ---------------- center detection ----------------
   useEffect(() => {
     const interval = setInterval(() => {
       if (!containerRef.current) return
 
       const cards = containerRef.current.children
-      const containerRect = containerRef.current.getBoundingClientRect()
-      const centerX = containerRect.left + containerRect.width / 2
+      const rect = containerRef.current.getBoundingClientRect()
+      const centerX = rect.left + rect.width / 2
 
       let closest = 0
       let minDist = Infinity
 
       Array.from(cards).forEach((card, i) => {
-        const rect = card.getBoundingClientRect()
-        const cardCenter = rect.left + rect.width / 2
+        const r = card.getBoundingClientRect()
+        const cardCenter = r.left + r.width / 2
         const dist = Math.abs(centerX - cardCenter)
 
         if (dist < minDist) {
           minDist = dist
-          closest = i % projects.length
+          closest = i % safeProjects.length
         }
       })
 
@@ -61,11 +59,12 @@ export default function ProjectsDisplay({ projects, theme }) {
     }, 100)
 
     return () => clearInterval(interval)
-  }, [projects.length])
+  }, [safeProjects.length])
+
+  if (!safeProjects.length) return null
 
   return (
     <div className="relative overflow-hidden">
-      {/* edge fade */}
       <div className="pointer-events-none absolute inset-0 z-10 mask-fade" />
 
       <motion.div
@@ -74,7 +73,8 @@ export default function ProjectsDisplay({ projects, theme }) {
         className="flex gap-6 w-max"
       >
         {looped.map((project, i) => {
-          const isActive = i % projects.length === activeIndex
+          const isActive =
+            i % safeProjects.length === activeIndex
 
           return (
             <div
@@ -99,7 +99,6 @@ export default function ProjectsDisplay({ projects, theme }) {
                 ${theme.card.bg}
               `}
             >
-              {/* title */}
               <h3
                 className={`text-lg font-semibold mb-2 transition-colors duration-500 ${
                   isActive ? "text-orange-300" : theme.text.main
@@ -108,12 +107,10 @@ export default function ProjectsDisplay({ projects, theme }) {
                 {project.title}
               </h3>
 
-              {/* description */}
               <p className={`text-sm ${theme.text.muted}`}>
                 {project.desc}
               </p>
 
-              {/* tags */}
               <div className="flex gap-2 flex-wrap mt-4">
                 {project.tags.map((tag) => (
                   <span
@@ -125,7 +122,6 @@ export default function ProjectsDisplay({ projects, theme }) {
                 ))}
               </div>
 
-              {/* glow indicator */}
               {isActive && (
                 <div className="mt-5 h-1 w-16 bg-orange-300/40 rounded-full blur-[1px]" />
               )}
