@@ -1,73 +1,100 @@
-import { useState } from "react"
-import { motion, animate, useMotionValue } from "framer-motion"
-import { projects } from "../data/projects"
+import { useEffect, useState, useRef } from "react"
+import { motion } from "framer-motion"
 import { getTheme } from "../styles/theme"
+import { projects } from "../data/Projects"
 
-export default function ProjectsDisplay({ darkMode }) {
+export default function Projects({ darkMode }) {
   const theme = getTheme(darkMode)
 
-  const x = useMotionValue(0)
-  const [activeIndex, setActiveIndex] = useState(0)
-
-  const cardWidth = 320 + 24
-  const looped = [...projects, ...projects, ...projects]
-
-  const goTo = (index) => {
-    setActiveIndex(index)
-
-    animate(x, -index * cardWidth, {
-      type: "spring",
-      stiffness: 120,
-      damping: 20,
-    })
+  const colors = {
+    glow: darkMode
+      ? {
+          border: "border-orange-300/40",
+          shadow: "shadow-orange-300/20",
+          bar: "bg-orange-300/50",
+          dot: "bg-orange-300",
+          text: "text-orange-300",
+        }
+      : {
+          border: "border-blue-400/40",
+          shadow: "shadow-blue-400/20",
+          bar: "bg-blue-400/50",
+          dot: "bg-blue-400",
+          text: "text-blue-500",
+        },
   }
 
-  const handleIndex = (i) => {
-    const len = projects.length
-    return ((i % len) + len) % len
-  }
+  const [active, setActive] = useState(0)
+  const intervalRef = useRef(null)
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setActive((prev) => (prev + 1) % projects.length)
+    }, 4000)
+
+    return () => clearInterval(intervalRef.current)
+  }, [])
+
+  const getIndex = (offset) =>
+    (active + offset + projects.length) % projects.length
 
   return (
-    <section className={`py-40 ${theme.text.main}`}>
-      <h2 className="text-3xl font-semibold mb-10 text-center">
-        My Projects
+    <section
+      id="projects"
+      className={`max-w-6xl mx-auto px-6 pt-48 md:pt-80 space-y-10 ${theme.text.main}`}
+    >
+      <h2 className="text-3xl font-semibold text-center">
+        Projects
       </h2>
 
-      {/* CAROUSEL */}
-      <div className="overflow-hidden w-[1040px] mx-auto relative">
-        <motion.div style={{ x }} className="flex gap-6 w-max">
-          {looped.map((project, i) => {
-            const realIndex = handleIndex(i)
-            const isActive = realIndex === activeIndex
+      {/* 3 CARD VIEW */}
+      <div className="flex justify-center items-center gap-8">
+        {[-1, 0, 1].map((offset) => {
+          const index = getIndex(offset)
+          const isCenter = offset === 0
+          const project = projects[index]
 
-            return (
-              <div
-                key={i}
-                onClick={() => goTo(realIndex)}
-                className={`
-                  w-[320px]
-                  h-[240px]
-                  flex-shrink-0
-                  rounded-2xl
-                  border
-                  backdrop-blur-md
-                  p-6
-                  shadow-lg
-                  cursor-pointer
-                  transition-all duration-500
+          return (
+            <motion.div
+              key={project.title}
+              onClick={() => setActive(index)}
+              animate={{
+                scale: isCenter ? 1.1 : 0.9,
+                opacity: isCenter ? 1 : 0.6,
+                y: isCenter ? -20 : 0,
+              }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className={`
+                w-[380px]   /* BIGGER */
+                h-[320px]   /* BIGGER */
+                rounded-2xl
+                border
+                backdrop-blur-md
+                cursor-pointer
+                overflow-hidden
+                transition-all duration-500
+                ${theme.card.bg}
+                ${
+                  isCenter
+                    ? `${colors.glow.border} ${colors.glow.shadow}`
+                    : theme.card.border
+                }
+              `}
+            >
+              {/* IMAGE */}
+              <div className="h-40 w-full overflow-hidden">
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-                  ${
-                    isActive
-                      ? "opacity-100 border-orange-300/40 shadow-[0_0_35px_rgba(251,146,60,0.18)]"
-                      : "opacity-60 border-white/10"
-                  }
-
-                  ${theme.card.bg}
-                `}
-              >
+              {/* CONTENT */}
+              <div className="p-5">
                 <h3
-                  className={`text-lg font-semibold mb-2 ${
-                    isActive ? "text-orange-300" : ""
+                  className={`text-lg font-semibold mb-2 transition-colors ${
+                    isCenter ? colors.glow.text : ""
                   }`}
                 >
                   {project.title}
@@ -77,7 +104,7 @@ export default function ProjectsDisplay({ darkMode }) {
                   {project.desc}
                 </p>
 
-                <div className="flex gap-2 flex-wrap mt-4">
+                <div className="flex gap-2 flex-wrap mt-3">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -88,35 +115,45 @@ export default function ProjectsDisplay({ darkMode }) {
                   ))}
                 </div>
 
-                {isActive && (
-                  <div className="mt-5 h-1 w-16 bg-orange-300/40 rounded-full blur-[1px]" />
+                {isCenter && (
+                  <div
+                    className={`mt-4 h-1 w-16 rounded-full ${colors.glow.bar}`}
+                  />
+                )}
+
+                {isCenter && project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    className="text-xs mt-3 inline-block opacity-70 hover:opacity-100"
+                  >
+                    View project →
+                  </a>
                 )}
               </div>
-            )
-          })}
-        </motion.div>
+            </motion.div>
+          )
+        })}
       </div>
 
       {/* DOTS */}
-      <div className="flex justify-center gap-3 mt-8">
-        {projects.map((_, i) => {
-          const isActive = i === activeIndex
-
-          return (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className={`
-                w-2.5 h-2.5 rounded-full transition-all duration-300
-                ${
-                  isActive
-                    ? "bg-orange-300 scale-125 shadow-[0_0_10px_rgba(251,146,60,0.5)]"
-                    : "bg-white/30 hover:bg-white/50"
-                }
-              `}
-            />
-          )
-        })}
+      <div className="flex justify-center gap-3 pt-4">
+        {projects.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setActive(i)}
+            className={`
+              rounded-full transition-all duration-300
+              ${
+                i === active
+                  ? `w-8 h-2 ${colors.glow.dot}`
+                  : darkMode
+                  ? "w-2 h-2 bg-white/20 hover:bg-white/40"
+                  : "w-2 h-2 bg-black/20 hover:bg-black/40"
+              }
+            `}
+          />
+        ))}
       </div>
     </section>
   )
