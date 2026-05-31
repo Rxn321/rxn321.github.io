@@ -59,14 +59,14 @@ export default function Projects({ darkMode }) {
               key={project.title}
               onClick={() => setActive(index)}
               animate={{
-                scale: isCenter ? 1.1 : 0.9,
+                scale: isCenter ? 1.0 : 0.9,
                 opacity: isCenter ? 1 : 0.6,
                 y: isCenter ? -20 : 0,
               }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
               className={`
-                w-[380px]   /* BIGGER */
-                h-[320px]   /* BIGGER */
+                w-[380px]
+                h-[560px]
                 rounded-2xl
                 border
                 backdrop-blur-md
@@ -91,16 +91,16 @@ export default function Projects({ darkMode }) {
               </div>
 
               {/* CONTENT */}
-              <div className="p-5">
+              <div className="h-full p-5">
                 <h3
-                  className={`text-lg font-semibold mb-2 transition-colors ${
+                  className={`text-lg font-semibold mb-2 transition-colors  ${
                     isCenter ? colors.glow.text : ""
                   }`}
                 >
                   {project.title}
                 </h3>
 
-                <p className={`text-sm ${theme.text.muted}`}>
+                <p className={`text-sm leading-relaxed ${theme.text.muted}`}>
                   {project.desc}
                 </p>
 
