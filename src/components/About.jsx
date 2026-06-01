@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { getTheme } from "../styles/theme"
-import { about } from "../data/about"
+import { currently, hobby } from "../data/about"
 
 export default function About({ darkMode }) {
   const theme = getTheme(darkMode)
@@ -28,9 +28,6 @@ export default function About({ darkMode }) {
             {item.text}
           </p>
         ))}
-                <h2 className="text-3xl font-semibold text-center">
-          Currently...
-        </h2>
       </section>
     </motion.div>
   )
