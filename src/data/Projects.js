@@ -5,17 +5,17 @@ import finance from "../assets/plate.jpg"
 export const projects = [
   {
     title: "📍Portfolio Website📍",
-    desc: `Built a responsive portfolio website using React and Tailwind CSS to showcase projects and technical skills.`,
+    desc: `You are here!`,
     tags: [ "React", "Tailwind", "Frontend", "UI/UX"],
     img: portfolio,
     link: "https://github.com/Rxn321/Portfolio-Website",
   },
   {
     title: "Portfolio Optimization",
-    desc: `Developed a Python-based portfolio optimization tool for analyzing financial data and improving risk-adjusted returns. 
-        Processed historical stock data and applied quantitative methods to evaluate asset performance and optimize allocations. 
-        Focused on data handling, statistical analysis, and financial modeling techniques.`,
-    tags: ["Python", "Data Science", "Finance", "Optimization"],
+    desc: `A full-stack quantitative finance application built in Python and React.
+    The backend leverages yfinance for real-time market data ingestion, with statistical modeling including Sharpe Ratio, Value at Risk (VaR), Expected Shortfall (CVaR), 
+    and Monte Carlo simulation to map the efficient frontier and identify optimal portfolio allocations`,
+    tags: ["Python", "Data", "Optimization"],
     img: finance,
     link: "https://github.com/Rxn321/Portfolio-Optimization",
   },
@@ -28,12 +28,8 @@ export const projects = [
   },
   {
     title: "UBC Rocket",
-    desc: `Contributed to the UBC Rocket team on the Cloudburst rocket project,
-        Designed and manufactured structural components.
-        Collaborated with multidisciplinary subteams to ensure design requirements were met
-        and aligned with fabrication constraints.
-        Developed experience in engineering documentation, design iteration, and team coordination
-        in a real development environment.`,
+    desc: `Designed and manufactured structural rocket components for the UBC Rocket Cloudburst project, 
+    collaborating with engineering teams and gaining experience in design, fabrication, and technical documentation.`,
     tags: ["CAD", "FEA", "Project Management", "Manufacturing"],
     img: rocket,
     link: "https://www.ubcrocket.com/project-COTS.html",

@@ -30,7 +30,7 @@ export default function Projects({ darkMode }) {
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setActive((prev) => (prev + 1) % projects.length)
-    }, 4000)
+    }, 10000)
 
     return () => clearInterval(intervalRef.current)
   }, [])
@@ -100,7 +100,7 @@ export default function Projects({ darkMode }) {
                   {project.title}
                 </h3>
 
-                <p className={`text-sm leading-relaxed ${theme.text.muted}`}>
+                <p className={`text-md leading-relaxed ${theme.text.muted}`}>
                   {project.desc}
                 </p>
 
@@ -125,7 +125,7 @@ export default function Projects({ darkMode }) {
                   <a
                     href={project.link}
                     target="_blank"
-                    className="text-xs mt-3 inline-block opacity-70 hover:opacity-100"
+                    className="text-xs mt-3 inline-block opacity-90 hover:opacity-100"
                   >
                     View project →
                   </a>
