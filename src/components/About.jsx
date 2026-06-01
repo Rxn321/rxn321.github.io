@@ -18,12 +18,12 @@ export default function About({ darkMode }) {
         id="about"
         className={`max-w-4xl mx-auto px-6 pt-48 md:pt-80 space-y-6 transition-colors duration-500 ${theme.text.main}`}
       >
-        <h2 className="text-3xl font-semibold mb-4">
-          About
+        <h2 className="text-3xl font-semibold text-center">
+          Currently...
         </h2>
 
         <p className={`leading-relaxed ${theme.text.muted}`}>
-          UBC Math student working across IT, mechanical design, and data. I like turning ideas into systems that actually work.
+          B. Sc. Computer Science @ UBC
         </p>
 
         <div className="flex gap-6 flex-wrap">

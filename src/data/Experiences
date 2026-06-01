@@ -1,0 +1,32 @@
+export const experiences = [
+  {
+    title: "Exp1",
+    desc: "React + Tailwind portfolio with smooth animations.",
+    tags: ["React", "Tailwind"],
+  },
+  {
+    title: "Exp2",
+    desc: "Python-based stock analysis tool for risk optimization.",
+    tags: ["Python", "Data"],
+  },
+  {
+    title: "Exp3",
+    desc: "CAD + manufacturing for Cloudburst rocket project.",
+    tags: ["CAD", "FEA"],
+  },
+  {
+    title: "Exp4",
+    desc: "React + Tailwind portfolio with smooth animations.",
+    tags: ["React", "Tailwind"],
+  },
+  {
+    title: "Exp5",
+    desc: "Python-based stock analysis tool for risk optimization.",
+    tags: ["Python", "Data"],
+  },
+  {
+    title: "Exp6",
+    desc: "CAD + manufacturing for Cloudburst rocket project.",
+    tags: ["CAD", "FEA"],
+  },
+]

@@ -44,14 +44,12 @@ export default function Navbar({ darkMode }) {
       >
 
         {/* Left icon */}
-        <div className={`hidden md:flex items-center gap-6 ${theme.text.muted}`}>
+        <div className={`flex items-center gap-6 ${theme.text.muted}`}>
           <AiOutlineStock size={22} />
         </div>
 
         {/* Center NAV */}
-        <div className={`hidden md:flex absolute left-1/2 -translate-x-1/2 gap-12 text-lg ${theme.text.main}`}>
-
-          {/* Home */}
+        <div className={`hidden lg:flex absolute left-1/2 -translate-x-3/5 gap-12 text-lg ${theme.text.main}`}>
           <NavItem active={active === "hero"} theme={theme} id="hero" label="Home" />
           <NavItem active={active === "about"} theme={theme} id="about" label="About" />
           <NavItem active={active === "projects"} theme={theme} id="projects" label="Projects" />

@@ -20,9 +20,9 @@ export const projects = [
     link: "https://github.com/Rxn321/Portfolio-Optimization",
   },
   {
-    title: "smtsmt",
-    desc: "blahhblahhblahh",
-    tags: ["CAD", "FEA"],
+    title: "Physics Engine",
+    desc: `2D physics engine in Python simulating rigid body dynamics, collision detection, and response.`,
+    tags: ["Python", "TypeScript"],
     img: rocket,
     link: "",
   },

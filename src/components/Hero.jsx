@@ -19,13 +19,12 @@ export default function Hero({ darkMode }) {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="max-w-xl"
       >
-        <h1 className="text-5xl md:text-7xl font-serif">
-          Ryan T.Y. Liu
+        <h1 className="text-5xl md:text-7xl font-serif tracking-tight">
+          Ryan Liu
         </h1>
 
         <p className={`mt-6 text-2xl font-serif ${theme.hero.textMuted}`}>
-          —I'm a second year applied mathematics student at UBC.
-          I have a background in IT support and I enjoy building hands-on projects that combine data and real-world applications.
+          I am a second-year Applied Mathematics student who enjoys building hands-on projects that combine data analysis with real-world applications.
         </p>
       </motion.div>
 
