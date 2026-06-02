@@ -83,6 +83,7 @@ function App() {
         <About darkMode={darkMode} />
         {/* <Experiences darkMode={darkMode} /> {/* FOR FUTURE ... Doesnt have enough yet */}
         <Projects darkMode={darkMode} />
+        {/* <PortfolioOptimization darkMode={darkMode} /> {/* Backend spinup too long no point */}
         <Contacts darkMode={darkMode} />
       </div>
 
