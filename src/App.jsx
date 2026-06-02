@@ -7,6 +7,8 @@ import Projects from "./components/ProjectsDisplay"
 import Contacts from './components/Contacts'
 import Toggle from './components/Toggle'
 import Experiences from "./components/Experiences"
+import PortfolioOptimization from './components/PortfolioOptimization/PortfolioOptimization'
+// route path="/portfolio"
 
 function App() {
   const [scrolledPast, setScrolledPast] = useState(false)
