@@ -28,12 +28,20 @@ export default function Projects({ darkMode }) {
   const intervalRef = useRef(null)
 
   useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setActive((prev) => (prev + 1) % projects.length)
-    }, 10000)
-
+    startInterval()
     return () => clearInterval(intervalRef.current)
   }, [])
+  const startInterval = () => {
+    clearInterval(intervalRef.current)
+
+    intervalRef.current = setInterval(() => {
+      setActive((prev) => (prev + 1) % projects.length)
+    }, 4000)
+  }
+
+  const pauseInterval = () => {
+    clearInterval(intervalRef.current)
+  }
 
   const getIndex = (offset) =>
     (active + offset + projects.length) % projects.length
@@ -47,7 +55,7 @@ export default function Projects({ darkMode }) {
         Projects
       </h2>
 
-      {/* 3 CARD VIEW */}
+      {/* Cards ------FIX INSTANT SWAP ISSUE, RESET TIMER WHEN CLICK------  */}
       <div className="flex justify-center items-center gap-8">
         {[-1, 0, 1].map((offset) => {
           const index = getIndex(offset)
@@ -57,10 +65,12 @@ export default function Projects({ darkMode }) {
           return (
             <motion.div
               key={project.title}
-              onClick={() => setActive(index)}
+              onClick={() => {setActive(index); startInterval()}}
+              onMouseEnter={pauseInterval}
+              onMouseLeave={startInterval}
               animate={{
-                scale: isCenter ? 1.0 : 0.9,
-                opacity: isCenter ? 1 : 0.6,
+                scale: isCenter ? 1 : 1,
+                opacity: isCenter ? 1 : 0.7,
                 y: isCenter ? -20 : 0,
               }}
               transition={{ duration: 0.2, ease: "easeInOut" }}

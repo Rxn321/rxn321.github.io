@@ -28,6 +28,18 @@ export default function About({ darkMode }) {
             {item.text}
           </p>
         ))}
+        
+        <h2 className="text-3xl font-semibold text-center">
+          My Hobbies
+        </h2>
+        {hobby.map((item, i) => (
+          <p
+            key={i}
+            className={`leading-relaxed text-center ${theme.text.muted}`}
+          >
+            {item.text}
+          </p>
+        ))}
       </section>
     </motion.div>
   )
