@@ -1,6 +1,6 @@
 export const currently = [
   {
-    text: "B. Sc. Computer Science @ UBC",
+    text: "B. Sc. Mathematics @ UBC",
   },
   {
     text: "Internal Structure Designer @ UBC Rocket",
