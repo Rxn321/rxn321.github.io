@@ -24,7 +24,7 @@ export default function Hero({ darkMode }) {
         </h1>
 
         <p className={`mt-6 text-2xl font-serif ${theme.hero.textMuted}`}>
-          I am a second-year Applied Mathematics student who enjoys building hands-on projects that combine data analysis with real-world applications.
+          I am a second-year Applied Mathematics student who enjoys building hands-on projects that connect data-driven methods with real-world applications.
         </p>
       </motion.div>
 

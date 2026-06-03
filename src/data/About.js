@@ -3,14 +3,17 @@ export const currently = [
     text: "B. Sc. Computer Science @ UBC",
   },
   {
-    text: "Software Developer @ Company",
+    text: "Internal Structure Designer @ UBC Rocket",
+  },
+  {
+    text: "Finance Manager @ UBC TA",
   },
 ]
 export const hobby = [
   {
-    text: "i like...",
+    text: "",
   },
   {
-    text: "i like...",
+    text: " I enjoy playing badminton, hiking, and snowboarding.",
   },
 ]

@@ -19,7 +19,6 @@ export default function About({ darkMode }) {
         <h2 className="text-3xl font-semibold text-center">
           Currently...
         </h2>
-
         {currently.map((item, i) => (
           <p
             key={i}
@@ -30,7 +29,7 @@ export default function About({ darkMode }) {
         ))}
         
         <h2 className="text-3xl font-semibold text-center">
-          My Hobbies
+          More about me...
         </h2>
         {hobby.map((item, i) => (
           <p
