@@ -24,10 +24,10 @@ export const projects = [
   },
   {
     title: "Physics Engine",
-    desc: `2D physics engine in Python simulating rigid body dynamics, collision detection, and response.`,
+  desc: `⚠️IN PROGRESS⚠️ 2D physics engine in Python simulating rigid body dynamics, collision detection, and response.`,
     tags: ["Python", "TypeScript"],
     img: physic,
-    link: "",
+    link: "https://github.com/Rxn321/2D-Physics-Engine.git",
   },
   {
     title: "UBC Rocket",
