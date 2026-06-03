@@ -1,4 +1,4 @@
-import rocket from "../assets/plate.jpg"
+import rocket from "../assets/rocket-1.jpg"
 import portfolio from "../assets/plate.jpg"
 import finance from "../assets/plate.jpg"
 import optimize from "../assets/optimization_output.png"
