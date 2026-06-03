@@ -1,7 +1,8 @@
 import rocket from "../assets/rocket-1.jpg"
-import portfolio from "../assets/plate.jpg"
+import portfolio from "../assets/snow-1.PNG"
 import finance from "../assets/plate.jpg"
 import optimize from "../assets/optimization_output.png"
+import physic from "../assets/hero.png"
 
 // edit desc soon
 export const projects = [
@@ -25,7 +26,7 @@ export const projects = [
     title: "Physics Engine",
     desc: `2D physics engine in Python simulating rigid body dynamics, collision detection, and response.`,
     tags: ["Python", "TypeScript"],
-    img: rocket,
+    img: physic,
     link: "",
   },
   {
