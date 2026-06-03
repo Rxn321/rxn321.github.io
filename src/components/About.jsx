@@ -16,7 +16,7 @@ export default function About({ darkMode }) {
         id="about"
         className={`max-w-4xl mx-auto px-6 pt-48 md:pt-80 space-y-6 transition-colors duration-500 ${theme.text.main}`}
       >
-        <h2 className={`text-3xl font-semibold text-center ${theme.text.gradientText}`}>
+        <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
           Currently...
         </h2>
         {currently.map((item, i) => (
@@ -28,7 +28,7 @@ export default function About({ darkMode }) {
           </p>
         ))}
         
-        <h2 className="text-3xl font-semibold text-center">
+        <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
           More about me...
         </h2>
         {hobby.map((item, i) => (

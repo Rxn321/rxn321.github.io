@@ -6,24 +6,6 @@ import { projects } from "../data/Projects"
 export default function Projects({ darkMode }) {
   const theme = getTheme(darkMode)
 
-  const colors = {
-    glow: darkMode
-      ? {
-          border: "border-orange-300/40",
-          shadow: "shadow-orange-300/20",
-          bar: "bg-orange-300/50",
-          dot: "bg-orange-300",
-          text: "text-orange-300",
-        }
-      : {
-          border: "border-blue-400/40",
-          shadow: "shadow-blue-400/20",
-          bar: "bg-blue-400/50",
-          dot: "bg-blue-400",
-          text: "text-blue-500",
-        },
-  }
-
   const [active, setActive] = useState(0)
   const intervalRef = useRef(null)
 
@@ -51,12 +33,12 @@ export default function Projects({ darkMode }) {
       id="projects"
       className={`max-w-6xl mx-auto px-6 pt-48 md:pt-80 space-y-10 ${theme.text.main}`}
     >
-      <h2 className="text-3xl font-semibold text-center">
+      <h2 className={`text-3xl font-semibold leading-normal text-center ${theme.text.gradientText}`}>
         Projects
       </h2>
 
       {/* Cards ------FIX INSTANT SWAP ISSUE, RESET TIMER WHEN CLICK------  */}
-      <div className="flex justify-center items-center gap-8">
+      <div className="flex justify-center items-center gap-8 ">
         {[-1, 0, 1].map((offset) => {
           const index = getIndex(offset)
           const isCenter = offset === 0
@@ -86,7 +68,7 @@ export default function Projects({ darkMode }) {
                 ${theme.card.bg}
                 ${
                   isCenter
-                    ? `${colors.glow.border} ${colors.glow.shadow}`
+                    ? `${theme.glow.border} ${theme.glow.shadow}`
                     : theme.card.border
                 }
               `}
@@ -104,7 +86,7 @@ export default function Projects({ darkMode }) {
               <div className="h-full p-5">
                 <h3
                   className={`text-lg font-semibold mb-2 transition-colors  ${
-                    isCenter ? colors.glow.text : ""
+                    isCenter ? theme.glow.text : ""
                   }`}
                 >
                   {project.title}
@@ -127,7 +109,7 @@ export default function Projects({ darkMode }) {
 
                 {isCenter && (
                   <div
-                    className={`mt-4 h-1 w-16 rounded-full ${colors.glow.bar}`}
+                    className={`mt-4 h-1 w-16 rounded-full ${theme.glow.bar}`}
                   />
                 )}
 
@@ -156,7 +138,7 @@ export default function Projects({ darkMode }) {
               rounded-full transition-all duration-300
               ${
                 i === active
-                  ? `w-8 h-2 ${colors.glow.dot}`
+                  ? `w-8 h-2 ${theme.glow.dot}`
                   : darkMode
                   ? "w-2 h-2 bg-white/20 hover:bg-white/40"
                   : "w-2 h-2 bg-black/20 hover:bg-black/40"
