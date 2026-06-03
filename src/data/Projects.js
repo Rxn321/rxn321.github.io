@@ -18,7 +18,7 @@ export const projects = [
     The backend leverages yfinance for real-time market data ingestion, with statistical modeling including Sharpe Ratio, Value at Risk (VaR), Expected Shortfall (CVaR), 
     and Monte Carlo simulation to map the efficient frontier and identify optimal portfolio allocations`,
     tags: ["Python", "Data", "Optimization"],
-    img: finance,
+    img: optimize,
     link: "https://github.com/Rxn321/Portfolio-Optimization",
   },
   {
