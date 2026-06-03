@@ -1,6 +1,8 @@
 import rocket from "../assets/plate.jpg"
 import portfolio from "../assets/plate.jpg"
 import finance from "../assets/plate.jpg"
+import optimize from "../assets/optimization_output.png"
+
 // edit desc soon
 export const projects = [
   {
