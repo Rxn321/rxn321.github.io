@@ -45,7 +45,9 @@ export default function Navbar({ darkMode }) {
 
         {/* Left icon */}
         <div className={`flex items-center gap-6 ${theme.text.muted}`}>
-          <AiOutlineStock size={22} />
+          <a href="https://portfolio-optimization-ryanliu.streamlit.app/" target="_blank" rel="noopener noreferrer">
+            <AiOutlineStock size={22} />
+          </a>
         </div>
 
         {/* Center NAV */}
