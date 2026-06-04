@@ -1,4 +1,4 @@
-import me from "../assets/me.jpg";
+import me from "../assets/meAndRocket.jpg";
 import { motion } from "framer-motion";
 import { getTheme } from "../styles/theme";
 
