@@ -1,7 +1,10 @@
 import { motion } from "framer-motion"
 import { HiSun, HiMoon } from "react-icons/hi"
+import useIsMobile from "../styles/mobile"
 
 export default function Toggle({ darkMode, toggleTheme }) {
+  const isMobile = useIsMobile();
+
   return (
     <button
     onClick={toggleTheme}
@@ -18,7 +21,9 @@ export default function Toggle({ darkMode, toggleTheme }) {
 
         <motion.div
         animate={{
-            y: darkMode ? 12 : -12
+            y: darkMode
+            ? (isMobile ? 6 : 12)
+            : (isMobile ? -6 : -12),
         }}
         transition={{
             type: "spring",
