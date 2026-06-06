@@ -17,9 +17,7 @@ export const getTheme = (darkMode) => ({
     bg: darkMode ? "bg-white/5" : "bg-black/5",
     hoverBg: darkMode ? "hover:bg-white/10" : "hover:bg-black/10",
     border: darkMode ? "border-white/10" : "border-black/10",
-    borderStrong: darkMode ? "border-white/20" : "border-black/10",
     shadow: darkMode ? "shadow-xl" : "shadow-md",
-    scrollbar: darkMode ? "scrollbar-thumb-white/20" : "scrollbar-thumb-black/20",
   },
   glow: darkMode
     ? {

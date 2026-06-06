@@ -1,10 +1,12 @@
 import me from "../assets/meAndRocket.jpg";
 import { motion } from "framer-motion";
 import { getTheme } from "../styles/theme";
+import useIsMobile from "../styles/mobile";
 
 export default function Hero({ darkMode }) {
   const theme = getTheme(darkMode);
-
+  const isMobile = useIsMobile();
+  
   return (
     <main
       id="hero"
@@ -19,23 +21,27 @@ export default function Hero({ darkMode }) {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="max-w-xl"
       >
-        <h1 className="text-5xl md:text-7xl font-serif tracking-tight">
+        <h1 className="text-4xl md:text-6xl tracking-tight">
+          Hey, I'm
+        </h1>
+
+        <h1 className={`text-5xl md:text-7xl text-transparent pb-6 ${theme.text.gradientText}`}>
           Ryan Liu
         </h1>
 
-        <p className={`mt-6 text-2xl font-serif ${theme.hero.textMuted}`}>
+        <p className={`mt-6 font-serif ${theme.hero.textMuted} ${isMobile ? "text-lg" : "text-2xl"}`}>
           I am a second-year Applied Mathematics student who enjoys building hands-on projects that connect data-driven methods with real-world applications.
         </p>
       </motion.div>
 
       {/* Image */}
       <div
-        className={`${theme.hero.cardBg} p-3 pb-6 ${theme.hero.shadow} rotate-[-4deg] hover:rotate-0 transition duration-300`}
+        className={`${theme.hero.cardBg} ${theme.hero.shadow} transition duration-300 ${isMobile ? "rotate-[0deg] p-1 pb-2 border border-black/10" : "rotate-[-4deg] hover:rotate-0 p-3 pb-6"}`}
       >
         <img
           src={me}
           alt="Ryan"
-          className="w-32 h-32 md:w-64 md:h-64 object-cover rounded-md shadow-xl"
+          className={`object-cover rounded-md shadow-xl ${isMobile ? "w-48 h-48" : "w-64 h-64"}`}
         />
       </div>
 

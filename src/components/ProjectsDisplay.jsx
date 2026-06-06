@@ -2,10 +2,11 @@ import { useEffect, useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { getTheme } from "../styles/theme"
 import { projects } from "../data/Projects"
+import useIsMobile from "../styles/mobile"
 
 export default function Projects({ darkMode }) {
   const theme = getTheme(darkMode)
-
+  const isMobile = useIsMobile();
   const [active, setActive] = useState(0)
   const intervalRef = useRef(null)
 
@@ -37,8 +38,7 @@ export default function Projects({ darkMode }) {
         Projects
       </h2>
 
-      {/* Cards ------FIX INSTANT SWAP ISSUE, RESET TIMER WHEN CLICK------  */}
-      <div className="flex justify-center items-center gap-8 ">
+      <div className={`flex items-center gap-8 ${isMobile ? "flex-col" : "flex-row justify-center"}`}>
         {[-1, 0, 1].map((offset) => {
           const index = getIndex(offset)
           const isCenter = offset === 0
@@ -51,9 +51,9 @@ export default function Projects({ darkMode }) {
               onMouseEnter={pauseInterval}
               onMouseLeave={startInterval}
               animate={{
-                scale: isCenter ? 1 : 1,
-                opacity: isCenter ? 1 : 0.7,
-                y: isCenter ? -20 : 0,
+                scale: isMobile ? 1 : (isCenter ? 1.1 : 0.9),
+                opacity: isMobile ? 1 : (isCenter ? 1 : 0.7),
+                y: isMobile ? 0 : (isCenter ? -20 : 0),
               }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
               className={`
