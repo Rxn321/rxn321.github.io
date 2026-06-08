@@ -14,37 +14,51 @@ export default function Hero({ darkMode }) {
       md:text-left transition-colors duration-500 ${theme.hero.textMain}`}
     >
 
-      {/* Text */}
       <motion.div
         initial={{ opacity: 0, y: -40, filter: "blur(10px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="max-w-xl"
+        className="max-w-4xl"
       >
-        <h1 className="text-4xl md:text-6xl tracking-tight">
-          Hey, I'm
-        </h1>
+        <div className="flex flex-row items-center gap-6 md:gap-12 justify-center md:justify-start">
+          {!isMobile && (
+            <div
+              className={`${theme.hero.cardBg} ${theme.hero.shadow}
+              transition duration-300
+              rotate-[-4deg] hover:rotate-0 p-3 pb-6`}
+            >
+              <img
+                src={me}
+                alt="Ryan"
+                className="w-64 h-64 object-cover rounded-md shadow-xl"
+              />
+            </div>
+          )}
 
-        <h1 className={`text-5xl md:text-7xl text-transparent pb-6 ${theme.text.gradientText}`}>
-          Ryan Liu
-        </h1>
+          <div>
+            <h1 className="text-4xl md:text-6xl tracking-tight">
+              Hey, I'm
+              <span className="inline-block origin-[70%_70%] animate-[wave_1.5s_ease-in-out_infinite] ml-2">
+                👋
+              </span>
+            </h1>
 
-        <p className={`mt-6 font-serif ${theme.hero.textMuted} ${isMobile ? "text-lg" : "text-2xl"}`}>
-          I am a second-year Applied Mathematics student who enjoys building hands-on projects that connect data-driven methods with real-world applications.
-        </p>
+            <h1 className={`text-5xl md:text-7xl text-transparent pb-4 ${theme.hero.gradientText}`}>
+              Ryan Liu
+            </h1>
+
+            <p
+              className={`mt-6 ${theme.hero.textMuted} ${
+                isMobile ? "text-lg" : "text-xl"
+              } max-w-md text-center md:text-left`}
+            >
+              I am a second-year Applied Mathematics student who enjoys building
+              hands-on projects that connect data-driven methods with real-world
+              applications.
+            </p>
+          </div>
+        </div>
       </motion.div>
-
-      {/* Image */}
-      <div
-        className={`${theme.hero.cardBg} ${theme.hero.shadow} transition duration-300 ${isMobile ? "rotate-[0deg] p-1 pb-2 border border-black/10" : "rotate-[-4deg] hover:rotate-0 p-3 pb-6"}`}
-      >
-        <img
-          src={me}
-          alt="Ryan"
-          className={`object-cover rounded-md shadow-xl ${isMobile ? "w-48 h-48" : "w-64 h-64"}`}
-        />
-      </div>
-
     </main>
   );
 }

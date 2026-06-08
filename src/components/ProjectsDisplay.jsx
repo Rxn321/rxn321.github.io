@@ -74,7 +74,7 @@ export default function Projects({ darkMode }) {
             dragConstraints={{ left: 2, right: 2 }}
             onDragEnd={handleSwipe}
             className={`
-              w-[90%]
+              w-[80%]
               h-[560px]
               rounded-2xl
               border
@@ -116,7 +116,9 @@ export default function Projects({ darkMode }) {
                   </span>
                 ))}
               </div>
-
+              <div
+                  className={`mt-4 h-1 w-16 rounded-full ${theme.glow.bar}`}
+              />    
               {projects[active].link && (
                 <a
                   href={projects[active].link}
@@ -162,7 +164,7 @@ export default function Projects({ darkMode }) {
                 ${theme.card.border}
                 ${
                   isCenter
-                    ? `shadow-xl ${theme.glow.border} ${theme.glow.shadow}`
+                    ? `shadow-lg ${theme.glow.border} ${theme.glow.shadow}`
                     : `${theme.card.border} ${theme.hero.shadow}`
                 }
               `}

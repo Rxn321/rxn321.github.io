@@ -9,7 +9,7 @@ export default function About({ darkMode }) {
     <motion.div
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: false, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <section
@@ -19,6 +19,7 @@ export default function About({ darkMode }) {
         <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
           Currently...
         </h2>
+        
         {currently.map((item, i) => (
           <p
             key={i}

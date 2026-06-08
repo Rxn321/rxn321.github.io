@@ -9,6 +9,7 @@ import Toggle from './components/Toggle'
 
 function App() {
   const [scrolledPast, setScrolledPast] = useState(false)
+  
   const [darkMode, setDarkMode] = useState(false)
 
   const toggleTheme = () => {
@@ -81,9 +82,30 @@ function App() {
         <Projects darkMode={darkMode} />
         <Contacts darkMode={darkMode} />
       </div>
-
+      <motion.div
+        className={`fixed inset-0 z-10 bg-gradient-to-b ${
+          darkMode
+            ? "from-orange-300/40 via-zinc-600/30 to-neutral-700/10"
+            : "from-indigo-300/40 via-white/30 to-white/10"
+        }`}
+        animate={{
+          y: scrolledPast ? "100%" : "0%",
+          skewY: scrolledPast ? 0 : 0
+        }}
+        transition={{
+          type: "tween",
+          duration: 0.9,
+          ease: "easeInOut"
+        }}
+        style={{
+          transformOrigin: "top"
+        }}
+      />
     </div>
+    
   )
+  
+  
 }
 
 export default App
