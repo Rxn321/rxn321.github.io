@@ -6,7 +6,6 @@ import About from './components/About'
 import Projects from "./components/ProjectsDisplay"
 import Contacts from './components/Contacts'
 import Toggle from './components/Toggle'
-import Experiences from "./components/Experiences"
 
 function App() {
   const [scrolledPast, setScrolledPast] = useState(false)
@@ -52,7 +51,7 @@ function App() {
         className={`fixed inset-0 z-10 bg-gradient-to-b ${
           darkMode
             ? "from-orange-300/40 via-zinc-600/30 to-neutral-700/10"
-            : "from-indigo-300/40 via-white/40 to-white/20"
+            : "from-indigo-300/40 via-white/30 to-white/10"
         }`}
         animate={{
           y: scrolledPast ? "-130%" : "0%",
@@ -79,9 +78,7 @@ function App() {
       <div className="relative z-20">
         <Hero darkMode={darkMode} />
         <About darkMode={darkMode} />
-        {/* <Experiences darkMode={darkMode} /> {/* FOR FUTURE ... Doesnt have enough yet */}
         <Projects darkMode={darkMode} />
-        {/* <PortfolioOptimization darkMode={darkMode} /> {/* Backend spinup too long no point */}
         <Contacts darkMode={darkMode} />
       </div>
 

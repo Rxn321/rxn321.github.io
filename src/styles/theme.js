@@ -5,7 +5,7 @@ export const getTheme = (darkMode) => ({
     strong: darkMode ? "text-white" : "text-black",
     gradientText: darkMode
   ? "bg-gradient-to-r from-orange-300 to-red-500 bg-clip-text text-transparent"
-  : "bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent",
+  : "bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent",
   },
   hero: {
     cardBg: darkMode ? "bg-white" : "bg-white",
@@ -21,14 +21,14 @@ export const getTheme = (darkMode) => ({
   },
   glow: darkMode
     ? {
-        border: "border-orange-300/40",
+        border: "border-orange-300/40 ",
         shadow: "shadow-orange-300/20",
         bar: "bg-orange-300/50",
         dot: "bg-orange-300",
         text: "text-orange-300",
       }
     : {
-         border: "border-blue-400/40",
+        border: "border-blue-400/40",
         shadow: "shadow-blue-400/20",
         bar: "bg-blue-400/50",
         dot: "bg-blue-400",

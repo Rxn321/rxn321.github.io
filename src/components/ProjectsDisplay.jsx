@@ -84,6 +84,7 @@ export default function Projects({ darkMode }) {
               ${theme.card.bg}
               ${theme.card.border}
               ${theme.glow.shadow}
+              ${theme.hero.shadow}
             `}
           >
             {/* IMAGE */}
@@ -120,7 +121,7 @@ export default function Projects({ darkMode }) {
                 <a
                   href={projects[active].link}
                   target="_blank"
-                  className="text-xs mt-4 inline-block opacity-90"
+                  className="text-s mt-4 inline-block opacity-90"
                 >
                   View project →
                 </a>
@@ -143,8 +144,8 @@ export default function Projects({ darkMode }) {
               onMouseEnter={pauseInterval}
               onMouseLeave={startInterval}
               animate={{
-                scale: isMobile ? 1 : (isCenter ? 1.1 : 0.9),
-                opacity: isMobile ? 1 : (isCenter ? 1 : 0.7),
+                scale: isMobile ? 1 : (isCenter ? 1 : 1),
+                opacity: isMobile ? 1 : (isCenter ? 1 : 1),
                 y: isMobile ? 0 : (isCenter ? -20 : 0),
               }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
@@ -158,10 +159,11 @@ export default function Projects({ darkMode }) {
                 overflow-hidden
                 transition-all duration-500
                 ${theme.card.bg}
+                ${theme.card.border}
                 ${
                   isCenter
-                    ? `${theme.glow.border} ${theme.glow.shadow}`
-                    : theme.card.border
+                    ? `shadow-xl ${theme.glow.border} ${theme.glow.shadow}`
+                    : `${theme.card.border} ${theme.hero.shadow}`
                 }
               `}
             >
@@ -209,7 +211,7 @@ export default function Projects({ darkMode }) {
                   <a
                     href={project.link}
                     target="_blank"
-                    className="text-xs mt-3 inline-block opacity-90 hover:opacity-100"
+                    className="text-s mt-3 inline-block opacity-90 hover:opacity-100"
                   >
                     View project →
                   </a>
