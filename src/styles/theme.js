@@ -4,7 +4,7 @@ export const getTheme = (darkMode) => ({
     muted: darkMode ? "text-white/80" : "text-black/70",
     strong: darkMode ? "text-white" : "text-black",
     gradientText: darkMode
-  ? "bg-gradient-to-r from-orange-300 to-red-500/60 bg-clip-text text-transparent"
+  ? "bg-gradient-to-r from-orange-300 to-red-500/70 bg-clip-text text-transparent"
   : "bg-gradient-to-r from-blue-400 to-purple-600/40 bg-clip-text text-transparent",
   },
   hero: {

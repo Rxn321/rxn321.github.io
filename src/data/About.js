@@ -11,11 +11,23 @@ export const currently = [
 ]
 export const hobby = [
   {
-    text: "Snowboarding",
+    text: "Space Systems🛰️",
   },
   {
-    text: " Hiking and Camping",
+    text: "System Modeling & Simulation🌌",
   },
+  {
+    text: "Machine Learning👾",
+  },
+  {
+    text: "Snowboarding🏂",
+  },
+  {
+    text: "Hiking⛰️",
+  },
+  {
+    text: "Camping🏕️",
+  }
 ]
 export const skills = [
   { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus" },
@@ -26,6 +38,6 @@ export const skills = [
   { name: "Git", icon: "https://cdn.simpleicons.org/git" },
   { name: "SolidWorks", icon: "https://cdn.simpleicons.org/dassaultsystemes" },
   { name: "Fusion 360", icon: "https://cdn.simpleicons.org/autodesk" },
-  { name: "AWS", icon: "mdi:cloud-outline" },
+  { name: "AWS", icon: "https://skillicons.dev/icons?i=aws" },
   { name: "SQL", icon: "https://cdn.simpleicons.org/mysql" }
 ]
