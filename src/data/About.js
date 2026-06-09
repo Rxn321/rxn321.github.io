@@ -26,6 +26,6 @@ export const skills = [
   { name: "Git", icon: "https://cdn.simpleicons.org/git" },
   { name: "SolidWorks", icon: "https://cdn.simpleicons.org/dassaultsystemes" },
   { name: "Fusion 360", icon: "https://cdn.simpleicons.org/autodesk" },
-  { name: "AWS", icon: "https://cdn.simpleicons.org/amazonaws" },
+  { name: "AWS", icon: "mdi:cloud-outline" },
   { name: "SQL", icon: "https://cdn.simpleicons.org/mysql" }
 ]
