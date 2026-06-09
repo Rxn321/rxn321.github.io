@@ -37,18 +37,20 @@ export default function About({ darkMode }) {
         
         ))}
         {/* Skills Carousel */}     
-        <div className={`w-md md:w-2xl overflow-hidden rounded-3xl bg-white/5 py-4 backdrop-blur-sm ${theme.card.bg} ${theme.card.border}`}>
+        <div className={`w-md md:w-2xl overflow-hidden rounded-3xl py-4 backdrop-blur-sm ${theme.card.bg} ${theme.glow.border}`}>
           <div className="flex animate-carousel gap-8">
             {duplicated.map((skill, index) => (
               <div
                 key={index}
                 className="flex min-w-fit flex-col items-center gap-2 px-4"
               >
-                <img
-                  src={skill.icon}
-                  alt={skill.name}
-                  className="h-12 w-12"
-                />
+                <div className= {`flex h-16 w-16 items-center justify-center rounded-2xl bg-white ${theme.hero.shadow}`}>
+                  <img
+                    src={skill.icon}
+                    alt={skill.name}
+                    className="h-10 w-10"
+                  />
+                </div>
                 <span className="text-sm text-white/80">
                   {skill.name}
                 </span>

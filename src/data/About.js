@@ -27,8 +27,5 @@ export const skills = [
   { name: "SolidWorks", icon: "https://cdn.simpleicons.org/dassaultsystemes" },
   { name: "Fusion 360", icon: "https://cdn.simpleicons.org/autodesk" },
   { name: "AWS", icon: "https://cdn.simpleicons.org/amazonaws" },
-  { name: "Chinese", icon: "https://cdn.simpleicons.org/googletranslate" },
-  <div className="px-3 py-1 rounded-full border border-white/10 text-sm">
-  中文 (Mandarin)
-  </div>
+  { name: "SQL", icon: "https://cdn.simpleicons.org/mysql" }
 ]
