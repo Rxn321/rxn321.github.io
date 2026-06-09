@@ -1,3 +1,15 @@
+import {
+  SiCplusplus,
+  SiPython,
+  SiTypescript,
+  SiReact,
+  SiTailwindcss,
+  SiGit,
+  SiDassaultsystemes,
+  SiAutodesk,
+  SiMysql,
+} from "react-icons/si";
+
 export const currently = [
   {
     text: "B. Sc. Mathematics @ UBC",
@@ -31,14 +43,13 @@ export const hobby = [
 
 ]
 export const skills = [
-  { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus" },
-  { name: "Python", icon: "https://cdn.simpleicons.org/python" },
-  { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript" },
-  { name: "React", icon: "https://cdn.simpleicons.org/react" },
-  { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss" },
-  { name: "Git", icon: "https://cdn.simpleicons.org/git" },
-  { name: "SolidWorks", icon: "https://cdn.simpleicons.org/dassaultsystemes" },
-  { name: "Fusion 360", icon: "https://cdn.simpleicons.org/autodesk" },
-  { name: "AWS", icon: "https://skillicons.dev/icons?i=aws" },
-  { name: "SQL", icon: "https://cdn.simpleicons.org/mysql" }
-]
+  { name: "C++", icon: SiCplusplus },
+  { name: "Python", icon: SiPython },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "React", icon: SiReact },
+  { name: "Tailwind CSS", icon: SiTailwindcss },
+  { name: "Git", icon: SiGit },
+  { name: "SolidWorks", icon: SiDassaultsystemes },
+  { name: "Fusion 360", icon: SiAutodesk },
+  { name: "SQL", icon: SiMysql },
+];

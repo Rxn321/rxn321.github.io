@@ -31,24 +31,27 @@ export default function About({ darkMode }) {
           Skills...
         </h2>
         <div className={`w-md md:w-2xl overflow-hidden rounded-3xl py-3 backdrop-blur-sm border bg-white/5 ${theme.ui.bg} ${theme.ui.border}`}>
-          <div className="flex animate-carousel gap-8">
-            {duplicated.map((skill, index) => (
-              <div
-                key={index}
-                className="flex min-w-fit flex-col items-center gap-1 px-4"
-              >
-                <div className= {`flex h-12 w-12 items-center justify-center rounded-2xl bg-white ${theme.hero.shadow}`}>
-                  <img
-                    src={skill.icon}
-                    alt={skill.name}
-                    className="h-8 w-8"
-                  />
+          <div className="flex animate-carousel gap-6">
+            {duplicated.map((skill, index) => {
+              const Icon = skill.icon;
+
+              return (
+                <div
+                  key={index}
+                  className="flex min-w-fit flex-col items-center gap-1 px-4 transition-transform duration-300 hover:scale-110"
+                >
+                  <div
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white${theme.hero.shadow}`}
+                  >
+                    <Icon className={`h-8 w-8 ${darkMode ? "text-orange-400/70" : "text-indigo-500/70"}`} />
+                  </div>
+
+                  <span className={`text-sm ${theme.text.muted}`}>
+                    {skill.name}
+                  </span>
                 </div>
-                <span className={`text-sm ${theme.text.muted}`}>
-                  {skill.name}
-                </span>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
