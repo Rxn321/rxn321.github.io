@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { getTheme } from "../styles/theme"
 import { currently, hobby, skills } from "../data/about"
+import collage from "../assets/collage.png";
 
 export default function About({ darkMode }) {
   const theme = getTheme(darkMode)
@@ -50,17 +51,30 @@ export default function About({ darkMode }) {
             ))}
           </div>
         </div>
+
         <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
           Interests...
         </h2>
-        {hobby.map((item, i) => (
-          <p
-            key={i}
-            className={`leading-relaxed text-center text-lg ${theme.text.main}`}
-          >
-            {item.text}
-          </p>
-        ))}
+
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+          {/* RIGHT: image */}
+          <div className="flex-1 flex justify-center">
+            <img
+              src= "collage"
+              alt="Pics of Interest"
+              className="w-64 h-96 object-cover rounded-2xl shadow-lg"
+            />
+          </div>
+
+          {/* LEFT: list */}
+          <ul className="list-disc pl-5 space-y-2 text-left flex-1">
+            {hobby.map((item, i) => (
+              <li key={i} className={`leading-relaxed text-lg ${theme.text.main}`}>
+                {item.text}
+              </li>
+            ))}
+          </ul>
+        </div>
         
       </section>
 

@@ -20,14 +20,15 @@ export const hobby = [
     text: "Machine Learning👾",
   },
   {
+    text: "Economics🏦",
+  },
+  {
     text: "Snowboarding🏂",
   },
   {
     text: "Hiking⛰️",
   },
-  {
-    text: "Camping🏕️",
-  }
+
 ]
 export const skills = [
   { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus" },
