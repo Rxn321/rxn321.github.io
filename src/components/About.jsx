@@ -1,7 +1,7 @@
+import collage from "../assets/collage.png";
 import { motion } from "framer-motion"
 import { getTheme } from "../styles/theme"
 import { currently, hobby, skills } from "../data/about"
-import collage from "../assets/collage.png";
 
 export default function About({ darkMode }) {
   const theme = getTheme(darkMode)
@@ -27,10 +27,10 @@ export default function About({ darkMode }) {
 
 
         {/* Skills Carousel */}
-        <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
+        <h2 className={`text-3xl font-semibold text-center pt-8 leading-normal ${theme.text.gradientText}`}>
           Skills...
         </h2>
-        <div className={`w-md md:w-2xl overflow-hidden rounded-3xl py-3 backdrop-blur-sm border ${theme.ui.bg} ${theme.ui.border}`}>
+        <div className={`w-md md:w-2xl overflow-hidden rounded-3xl py-3 backdrop-blur-sm border bg-white/5 ${theme.ui.bg} ${theme.ui.border}`}>
           <div className="flex animate-carousel gap-8">
             {duplicated.map((skill, index) => (
               <div
@@ -52,7 +52,7 @@ export default function About({ darkMode }) {
           </div>
         </div>
 
-        <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
+        <h2 className={`text-3xl font-semibold text-center pt-8 leading-normal ${theme.text.gradientText}`}>
           Interests...
         </h2>
 
@@ -60,9 +60,9 @@ export default function About({ darkMode }) {
           {/* RIGHT: image */}
           <div className="flex-1 flex justify-center">
             <img
-              src= "collage"
+              src= {collage}
               alt="Pics of Interest"
-              className="w-64 h-96 object-cover rounded-2xl shadow-lg"
+              className="w-72 object-cover shadow-lg"
             />
           </div>
 
