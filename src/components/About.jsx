@@ -15,15 +15,21 @@ export default function About({ darkMode }) {
         <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
           Currently...
         </h2>
-        
-        {currently.map((item, i) => (
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          {currently.map((item, i) => (
           <p
             key={i}
-            className={`leading-relaxed text-center text-lg ${theme.text.main}`}
+            className={`leading-relaxed text-center text-lg py-2 ${theme.text.main}`}
           >
             {item.text}
           </p>
-        ))}
+          ))}
+        </motion.div>
 
 
         {/* Skills Carousel */}
@@ -61,22 +67,39 @@ export default function About({ darkMode }) {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-10">
           {/* RIGHT: image */}
-          <div className="flex-1 flex justify-center">
-            <img
-              src= {collage}
-              alt="Pics of Interest"
-              className="w-72 object-cover shadow-lg"
-            />
-          </div>
-
-          {/* LEFT: list */}
-          <ul className="list-disc pl-5 space-y-2 text-left flex-1">
+            <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0.4 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            >
+              <div className="flex-1 flex justify-center">
+                <img
+                  src= {collage}
+                  alt="Pics of Interest"
+                  className="w-72 object-cover shadow-lg"
+                />
+              </div>
+            </motion.div>
+            <ul className="list-disc pl-5 space-y-4 text-left flex-1">
             {hobby.map((item, i) => (
-              <li key={i} className={`leading-relaxed text-lg ${theme.text.main}`}>
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  duration: 0.5,
+                  delay: i * 0.1,
+                  ease: "easeOut",
+                }}
+                className={`leading-relaxed text-lg ${theme.text.main}`}
+              >
                 {item.text}
-              </li>
+              </motion.li>
             ))}
           </ul>
+          
         </div>
         
       </section>
