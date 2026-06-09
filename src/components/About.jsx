@@ -10,7 +10,7 @@ export default function About({ darkMode }) {
   return (
       <section
         id="about"
-        className={`max-w-4xl mx-auto px-6 pt-20 md:pt-40 space-y-6 transition-colors duration-500 ${theme.text.main}`}
+        className={`w-full max-w-4xl mx-auto px-4 sm:px-6 pt-16 md:pt-40 space-y-6 overflow-x-hidden transition-colors duration-500 ${theme.text.main}`}
       >
         <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
           Currently...
@@ -36,8 +36,8 @@ export default function About({ darkMode }) {
         <h2 className={`text-3xl font-semibold text-center pt-8 leading-normal ${theme.text.gradientText}`}>
           Skills...
         </h2>
-        <div className={`w-md md:w-2xl overflow-hidden rounded-3xl py-3 backdrop-blur-sm border bg-white/5 ${theme.ui.bg} ${theme.ui.border}`}>
-          <div className="flex animate-carousel gap-6">
+        <div className={`w-full max-w-2xl mx-auto overflow-hidden rounded-3xl py-3 backdrop-blur-sm border bg-white/5 ${theme.ui.bg} ${theme.ui.border}`}>
+          <div className="flex animate-carousel gap-1 md:gap-6">
             {duplicated.map((skill, index) => {
               const Icon = skill.icon;
 
@@ -47,7 +47,7 @@ export default function About({ darkMode }) {
                   className="flex min-w-fit flex-col items-center gap-1 px-4 transition-transform duration-300 hover:scale-110"
                 >
                   <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white${theme.hero.shadow}`}
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 ${theme.hero.shadow}`}
                   >
                     <Icon className={`h-8 w-8 ${darkMode ? "text-orange-400/70" : "text-indigo-500/70"}`} />
                   </div>
@@ -69,7 +69,7 @@ export default function About({ darkMode }) {
           {/* RIGHT: image */}
             <motion.div
             initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0.4 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             >
@@ -77,7 +77,7 @@ export default function About({ darkMode }) {
                 <img
                   src= {collage}
                   alt="Pics of Interest"
-                  className="w-72 object-cover shadow-lg"
+                  className="w-40 md:w-72 object-cover shadow-lg"
                 />
               </div>
             </motion.div>

@@ -75,7 +75,7 @@ export default function Projects({ darkMode }) {
             onDragEnd={handleSwipe}
             className={`
               w-[80%]
-              h-[560px]
+              h-[640px]
               rounded-2xl
               border
               backdrop-blur-md
@@ -97,12 +97,12 @@ export default function Projects({ darkMode }) {
             </div>
 
             {/* CONTENT */}
-            <div className="h-full p-5">
+            <div className="p-5 flex flex-col flex-1">
               <h3 className={`text-lg font-semibold mb-2 ${theme.glow.text}`}>
                 {projects[active].title}
               </h3>
 
-              <p className={`text-md leading-relaxed ${theme.text.muted}`}>
+              <p className={` text-md leading-relaxed ${theme.text.muted}`}>
                 {projects[active].desc}
               </p>
 
@@ -178,7 +178,7 @@ export default function Projects({ darkMode }) {
               </div>
 
               {/* CONTENT */}
-              <div className="h-full p-5">
+              <div className="p-5 flex flex-col flex-1">
                 <h3
                   className={`text-lg font-semibold mb-2 transition-colors  ${
                     isCenter ? theme.glow.text : ""
