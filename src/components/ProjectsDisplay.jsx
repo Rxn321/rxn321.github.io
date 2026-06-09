@@ -60,7 +60,7 @@ export default function Projects({ darkMode }) {
   return (
     <section
       id="projects"
-      className={`max-w-6xl mx-auto px-6 pt-48 md:pt-80 space-y-10 ${theme.text.main}`}
+      className={`max-w-6xl mx-auto px-6 pt-32 space-y-10 ${theme.text.main}`}
     >
       <h2 className={`text-3xl font-semibold leading-normal text-center ${theme.text.gradientText}`}>
         Projects

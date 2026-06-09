@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"
 export default function Contact({ darkMode }) {
 
   const textMain = darkMode ? "text-white/90" : "text-black/80"
@@ -7,7 +8,7 @@ export default function Contact({ darkMode }) {
   return (
     <section
       id="contact"
-      className={`max-w-4xl mx-auto px-6 pt-100 text-center transition-colors duration-500 ${textMain}`}
+      className={`max-w-4xl mx-auto px-6 text-center transition-colors duration-500 ${textMain}`}
     >
       <h2 className="text-xl font-semibold mb-6">
         Contact

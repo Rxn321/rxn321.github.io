@@ -6,15 +6,9 @@ export default function About({ darkMode }) {
   const theme = getTheme(darkMode)
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.3 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
       <section
         id="about"
-        className={`max-w-4xl mx-auto px-6 pt-48 md:pt-80 space-y-6 transition-colors duration-500 ${theme.text.main}`}
+        className={`max-w-4xl mx-auto px-6 pt-20 md:pt-40 space-y-6 transition-colors duration-500 ${theme.text.main}`}
       >
         <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
           Currently...
@@ -41,6 +35,6 @@ export default function About({ darkMode }) {
           </p>
         ))}
       </section>
-    </motion.div>
+
   )
 }

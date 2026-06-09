@@ -20,25 +20,25 @@ export default function Toggle({ darkMode, toggleTheme }) {
     <div className="relative w-full h-full flex items-center justify-center">
 
         <motion.div
-        animate={{
-            y: darkMode
-            ? (isMobile ? 6 : 12)
-            : (isMobile ? -6 : -12),
-        }}
-        transition={{
-            type: "spring",
-            stiffness: 500,
-            damping: 30
-        }}
-        className={`w-7 h-7 rounded-full flex items-center justify-center shadow-md
-            ${
-            darkMode
-                ? "bg-white/10 text-amber-200/90"
-                : "bg-white/10 text-white"
-            }
-        `}
-        >
-        {darkMode ? <HiMoon size={14} /> : <HiSun size={14} />}
+            animate={{
+                y: darkMode
+                ? (isMobile ? 6 : 12)
+                : (isMobile ? -6 : -12),
+            }}
+            transition={{
+                type: "spring",
+                stiffness: 500,
+                damping: 30
+            }}
+            className={`w-7 h-7 rounded-full flex items-center justify-center shadow-md
+                ${
+                darkMode
+                    ? "bg-white/10 text-amber-200/90"
+                    : "bg-white/10 text-white"
+                }
+            `}
+            >
+            {darkMode ? <HiMoon size={14} /> : <HiSun size={14} />}
         </motion.div>
     </div>
     </button>
