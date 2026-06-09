@@ -51,7 +51,7 @@ export default function Navbar({ darkMode }) {
         </div>
 
         {/* Center NAV */}
-        <div className={`hidden lg:flex absolute left-1/2 -translate-x-3/5 gap-12 text-lg ${theme.text.main}`}>
+        <div className={`hidden lg:flex absolute left-1/2 -translate-x-3/5 gap-12 text-lg ${theme.text.muted}`}>
           <NavItem active={active === "hero"} theme={theme} id="hero" label="Home" />
           <NavItem active={active === "about"} theme={theme} id="about" label="About" />
           <NavItem active={active === "projects"} theme={theme} id="projects" label="Projects" />

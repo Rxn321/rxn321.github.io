@@ -11,9 +11,20 @@ export const currently = [
 ]
 export const hobby = [
   {
-    text: "",
+    text: "Snowboarding",
   },
   {
-    text: " I enjoy playing badminton, hiking, and snowboarding.",
+    text: " Hiking and Camping",
   },
+]
+export const skills = [
+  { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus" },
+  { name: "Python", icon: "https://cdn.simpleicons.org/python" },
+  { name: "", icon: "https://cdn.simpleicons.org/javascript" },
+  { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript" },
+  { name: "React", icon: "https://cdn.simpleicons.org/react" },
+  { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss" },
+  { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi" },
+  { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql" },
+  { name: "Git", icon: "https://cdn.simpleicons.org/git" },
 ]

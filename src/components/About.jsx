@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { getTheme } from "../styles/theme"
-import { currently, hobby } from "../data/about"
+import { currently, hobby, skills } from "../data/about"
 
 export default function About({ darkMode }) {
   const theme = getTheme(darkMode)
@@ -17,19 +17,19 @@ export default function About({ darkMode }) {
         {currently.map((item, i) => (
           <p
             key={i}
-            className={`leading-relaxed text-center ${theme.text.muted}`}
+            className={`leading-relaxed text-center text-lg ${theme.text.main}`}
           >
             {item.text}
           </p>
         ))}
         
         <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
-          More about me...
+          Interests...
         </h2>
         {hobby.map((item, i) => (
           <p
             key={i}
-            className={`leading-relaxed text-center ${theme.text.muted}`}
+            className={`leading-relaxed text-center text-lg ${theme.text.main}`}
           >
             {item.text}
           </p>

@@ -48,7 +48,7 @@ export default function Hero({ darkMode }) {
             </h1>
 
             <p
-              className={`mt-6 ${theme.hero.textMuted} ${
+              className={`mt-6 ${theme.hero.textMain} ${
                 isMobile ? "text-lg" : "text-xl"
               } max-w-md text-center md:text-left`}
             >
