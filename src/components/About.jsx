@@ -23,8 +23,21 @@ export default function About({ darkMode }) {
             {item.text}
           </p>
         ))}
-{/* Skills Carousel */}     
-        <div className="w-full overflow-hidden rounded-3xl border border-red-500 bg-white/5 pt-6 backdrop-blur-sm">
+
+        <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
+          Interests...
+        </h2>
+        {hobby.map((item, i) => (
+          <p
+            key={i}
+            className={`leading-relaxed text-center text-lg ${theme.text.main}`}
+          >
+            {item.text}
+          </p>
+        
+        ))}
+        {/* Skills Carousel */}     
+        <div className={`w-md md:w-2xl overflow-hidden rounded-3xl bg-white/5 py-4 backdrop-blur-sm ${theme.card.bg} ${theme.card.border}`}>
           <div className="flex animate-carousel gap-8">
             {duplicated.map((skill, index) => (
               <div
@@ -43,18 +56,6 @@ export default function About({ darkMode }) {
             ))}
           </div>
         </div>
-
-        <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
-          Interests...
-        </h2>
-        {hobby.map((item, i) => (
-          <p
-            key={i}
-            className={`leading-relaxed text-center text-lg ${theme.text.main}`}
-          >
-            {item.text}
-          </p>
-        ))}
       </section>
 
   )

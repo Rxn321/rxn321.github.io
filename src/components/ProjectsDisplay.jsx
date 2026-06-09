@@ -161,7 +161,6 @@ export default function Projects({ darkMode }) {
                 overflow-hidden
                 transition-all duration-500
                 ${theme.card.bg}
-                ${theme.card.border}
                 ${
                   isCenter
                     ? `shadow-lg ${theme.glow.border} ${theme.glow.shadow}`
