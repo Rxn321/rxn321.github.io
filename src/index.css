@@ -9,6 +9,16 @@
   75% { transform: rotate(10deg); }
   100% { transform: rotate(0deg); }
 }
+@keyframes carousel {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 html, body {
   font-family: system-ui;
   margin: 0;
@@ -45,4 +55,8 @@ a {
   display: inline-block;
   transform-origin: 70% 70%;
   animation: wave 1.5s ease-in-out infinite;
+}
+.animate-carousel {
+  width: max-content;
+  animation: carousel 20s linear infinite;
 }

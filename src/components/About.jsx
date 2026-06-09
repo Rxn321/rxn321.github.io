@@ -4,7 +4,8 @@ import { currently, hobby, skills } from "../data/about"
 
 export default function About({ darkMode }) {
   const theme = getTheme(darkMode)
-
+  const duplicated = [...skills, ...skills]
+  
   return (
       <section
         id="about"
@@ -22,7 +23,27 @@ export default function About({ darkMode }) {
             {item.text}
           </p>
         ))}
-        
+{/* Skills Carousel */}     
+        <div className="w-full overflow-hidden rounded-3xl border border-red-500 bg-white/5 pt-6 backdrop-blur-sm">
+          <div className="flex animate-carousel gap-8">
+            {duplicated.map((skill, index) => (
+              <div
+                key={index}
+                className="flex min-w-fit flex-col items-center gap-2 px-4"
+              >
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
+                  className="h-12 w-12"
+                />
+                <span className="text-sm text-white/80">
+                  {skill.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
           Interests...
         </h2>
