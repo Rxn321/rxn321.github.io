@@ -10,7 +10,7 @@ export default function About({ darkMode }) {
   return (
       <section
         id="about"
-        className={`w-full max-w-4xl mx-auto px-4 sm:px-6 pt-16 md:pt-40 space-y-6 overflow-x-hidden transition-colors duration-500 ${theme.text.main}`}
+        className={`w-full max-w-4xl mx-auto px-4 sm:px-6 pt-16 md:pt-40 space-y-6 overflow-x-hidden overflow-y-visible transition-colors duration-500 ${theme.text.main}`}
       >
         <h2 className={`text-3xl font-semibold text-center leading-normal ${theme.text.gradientText}`}>
           Currently...
@@ -37,7 +37,7 @@ export default function About({ darkMode }) {
           Skills...
         </h2>
         <div className={`w-full max-w-2xl mx-auto overflow-hidden rounded-3xl py-3 backdrop-blur-sm border bg-white/5 ${theme.ui.bg} ${theme.ui.border}`}>
-          <div className="flex animate-carousel gap-1 md:gap-6">
+          <div className="flex animate-carousel gap-6 w-max">
             {duplicated.map((skill, index) => {
               const Icon = skill.icon;
 
@@ -65,15 +65,15 @@ export default function About({ darkMode }) {
           Interests...
         </h2>
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 w-full">
           {/* RIGHT: image */}
             <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: -60 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             >
-              <div className="flex-1 flex justify-center">
+              <div className="flex justify-center w-full md:flex-1">
                 <img
                   src= {collage}
                   alt="Pics of Interest"
@@ -81,7 +81,7 @@ export default function About({ darkMode }) {
                 />
               </div>
             </motion.div>
-            <ul className="list-disc pl-5 space-y-4 text-left flex-1">
+            <ul className="list-disc pl-5 space-y-4 text-left w-full md:flex-1">
             {hobby.map((item, i) => (
               <motion.li
                 key={i}
