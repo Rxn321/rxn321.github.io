@@ -23,9 +23,12 @@ export const skills = [
   { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript" },
   { name: "React", icon: "https://cdn.simpleicons.org/react" },
   { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss" },
-  { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi" },
   { name: "Git", icon: "https://cdn.simpleicons.org/git" },
   { name: "SolidWorks", icon: "https://cdn.simpleicons.org/dassaultsystemes" },
   { name: "Fusion 360", icon: "https://cdn.simpleicons.org/autodesk" },
-  { name: "Chinese", icon: "https://cdn.simpleicons.org/googletranslate" }
+  { name: "AWS", icon: "https://cdn.simpleicons.org/amazonaws" },
+  { name: "Chinese", icon: "https://cdn.simpleicons.org/googletranslate" },
+  <div className="px-3 py-1 rounded-full border border-white/10 text-sm">
+  中文 (Mandarin)
+  </div>
 ]
