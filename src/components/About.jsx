@@ -65,23 +65,25 @@ export default function About({ darkMode }) {
           Interests...
         </h2>
 
-        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-10 w-full">
-          {/* RIGHT: image */}
-            <motion.div
-            initial={{ opacity: 0, y: -60 }}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full">
+
+          {/* IMAGE */}
+          <motion.div
+            className="flex-1 flex justify-center"
+            initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            >
-              <div className="flex justify-center w-full md:flex-1">
-                <img
-                  src= {collage}
-                  alt="Pics of Interest"
-                  className="w-40 md:w-72 object-cover shadow-lg"
-                />
-              </div>
-            </motion.div>
-            <ul className="list-disc pl-5 space-y-4 text-left w-full md:flex-1">
+          >
+            <img
+              src={collage}
+              alt="Pics of Interest"
+              className="w-40 md:w-72 object-cover shadow-lg"
+            />
+          </motion.div>
+
+          {/* LIST */}
+          <ul className="list-disc pl-5 space-y-4 text-left w-full md:flex-1">
             {hobby.map((item, i) => (
               <motion.li
                 key={i}
@@ -93,13 +95,13 @@ export default function About({ darkMode }) {
                   delay: i * 0.1,
                   ease: "easeOut",
                 }}
-                className={`leading-relaxed text-lg ${theme.text.main}`}
+                className={`leading-relaxed text-lg text-middle text-center md:text-left list-none md:list-disc ${theme.text.main} `}
               >
                 {item.text}
               </motion.li>
             ))}
           </ul>
-          
+
         </div>
         
       </section>
