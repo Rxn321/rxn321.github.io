@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+
 export default function Contact({ darkMode }) {
 
   const textMain = darkMode ? "text-white/90" : "text-black/80"

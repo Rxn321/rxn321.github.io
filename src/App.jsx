@@ -9,6 +9,7 @@ import Toggle from './components/Toggle'
 
 function App() {
   const [scrolledPast, setScrolledPast] = useState(false)
+  const [scrolledBottom, setScrolledBottom] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
 
   const toggleTheme = () => {
@@ -18,12 +19,15 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY
-
+      const viewportHeight = window.innerHeight
+      const fullHeight = document.documentElement.scrollHeight
       if (y > window.innerHeight * 0.30) {
         setScrolledPast(true)
       } else {
         setScrolledPast(false)
       }
+      const nearBottom = y + viewportHeight >= fullHeight - 50
+      setScrolledBottom(nearBottom)
     }
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
@@ -45,7 +49,7 @@ function App() {
         }`}
       />
 
-      {/* Overlay */}
+      {/*Top Overlay */}
       <motion.div
         className={`fixed inset-0 z-10 bg-gradient-to-b ${
           darkMode
@@ -81,11 +85,27 @@ function App() {
         <Projects darkMode={darkMode} />
         <Contacts darkMode={darkMode} />
       </div>
+      {/* Bot Overlay */}
+      <motion.div
+        className={`fixed inset-0 z-10 bg-gradient-to-b ${
+          darkMode
+            ? "from-neutral-700/10 via-zinc-600/30 to-orange-300/40"
+            : "from-white/10 via-white/30 to-indigo-300/40"
+        }`}
+        animate={{
+          opacity: scrolledBottom ? 1 : 0,
+        }}
+        transition={{
+          type: "tween",
+          duration: 0.9,
+          ease: "easeInOut"
+        }}
+        style={{
+          transformOrigin: "bottom"
+        }}
+      />
     </div>
-    
   )
-  
-  
 }
 
 export default App
