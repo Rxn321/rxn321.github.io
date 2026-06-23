@@ -1,5 +1,5 @@
-import { AiFillGithub, AiOutlineStock } from "react-icons/ai";
-import { FaLinkedin } from "react-icons/fa";
+import { AiFillGithub } from "react-icons/ai";
+import { FaLinkedin, FaImage  } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
@@ -45,8 +45,8 @@ export default function Navbar({ darkMode }) {
 
         {/* Left icon */}
         <div className={`flex items-center gap-6 ${theme.text.muted}`}>
-          <a href="https://portfolio-optimization-ryanliu.streamlit.app/" target="_blank" rel="noopener noreferrer">
-            <AiOutlineStock size={22} />
+          <a href="" target="_blank" rel="noopener noreferrer">
+            <FaImage size={20} />
           </a>
         </div>
 
@@ -77,7 +77,7 @@ export default function Navbar({ darkMode }) {
   );
 }
 
-/* Reusable Nav Item */
+/*Nav Item */
 function NavItem({ active, theme, id, label }) {
   return (
     <div className="relative w-20 text-center">

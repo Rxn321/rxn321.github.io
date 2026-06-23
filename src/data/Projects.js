@@ -1,6 +1,6 @@
-import rocket from "../assets/plate.jpg"
+import rocket from "../assets/cloudburst.JPG"
 import portfolio from "../assets/snow-1.PNG"
-import finance from "../assets/plate.jpg"
+import finance from "../assets/cloudburst.JPG"
 import optimize from "../assets/optimization_output.png"
 import physic from "../assets/hero.png"
 
@@ -15,9 +15,8 @@ export const projects = [
   },
   {
     title: "Portfolio Optimization",
-    desc: `A full-stack quantitative finance application built in Python and React.
-    The backend leverages yfinance for real-time market data ingestion, with statistical modeling including Sharpe Ratio, Value at Risk (VaR), Expected Shortfall (CVaR), 
-    and Monte Carlo simulation to map the efficient frontier and identify optimal portfolio allocations`,
+    desc: `Built a full-stack quantitative finance application using Python and React that leverages historical 
+    market data from yfinance to optimize portfolio allocations and assess risk through statistical analysis and Monte Carlo simulations.`,
     tags: ["Python", "Data", "Optimization"],
     img: optimize,
     link: "https://github.com/Rxn321/Portfolio-Optimization",
@@ -31,7 +30,7 @@ export const projects = [
   },
   {
     title: "UBC Rocket",
-    desc: `Designed and manufactured structural rocket components for the UBC Rocket Cloudburst project, 
+    desc: `Designed and manufactured structural rocket components for the award winning UBC Rocket Cloudburst, 
     collaborating with engineering teams and gaining experience in design, fabrication, and technical documentation.`,
     tags: ["CAD", "FEA", "Project Management", "Manufacturing"],
     img: rocket,
