@@ -8,8 +8,8 @@ export const getTheme = (darkMode) => ({
   : "bg-gradient-to-r from-blue-400 to-purple-600/40 bg-clip-text text-transparent",
   },
   navbar: {
-    main: darkMode ? "text-white" : "text-gray-500",
-    muted: darkMode ? "text-white" : "text-gray-500",
+    main: darkMode ? "text-white" : "text-black",
+    muted: darkMode ? "text-white" : "text-black",
     circle: darkMode ? "bg-orange-300" : "bg-indigo-400",
   },
   hero: {
