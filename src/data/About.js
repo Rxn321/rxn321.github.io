@@ -32,9 +32,6 @@ export const hobby = [
     text: "Machine Learning👾",
   },
   {
-    text: "Economics🏦",
-  },
-  {
     text: "Snowboarding🏂",
   },
   {

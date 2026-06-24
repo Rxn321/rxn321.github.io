@@ -98,7 +98,7 @@ export default function Projects({ darkMode }) {
 
             {/* CONTENT */}
             <div className="p-5 flex flex-col flex-1">
-              <h3 className={`text-lg font-semibold mb-2 ${theme.glow.text}`}>
+              <h3 className={`text-lg font-semibold mb-2 ${theme.text.gradientText}`}>
                 {projects[active].title}
               </h3>
 
@@ -181,7 +181,7 @@ export default function Projects({ darkMode }) {
               <div className="p-5 flex flex-col flex-1">
                 <h3
                   className={`text-lg font-semibold mb-2 transition-colors  ${
-                    isCenter ? theme.glow.text : ""
+                    isCenter ? theme.text.gradientText : ""
                   }`}
                 >
                   {project.title}
