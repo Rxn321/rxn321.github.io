@@ -10,7 +10,7 @@ export default function About({ darkMode }) {
   return (
     <section
       id="about"
-      className={`w-full max-w-4xl mx-auto px-4 sm:px-6 pt-16 md:pt-40 space-y-6 overflow-x-hidden overflow-y-visible transition-colors duration-500 ${theme.text.main}`}
+      className={`w-full max-w-4xl mx-auto px-4 sm:px-6 pt-16 md:pt-30 space-y-6 overflow-x-hidden overflow-y-visible transition-colors duration-500 ${theme.text.main}`}
     >
 
       {/* SKILLS FIRST */}
@@ -31,12 +31,8 @@ export default function About({ darkMode }) {
                 <div
                   className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 ${theme.hero.shadow}`}
                 >
-                  <Icon 
-                    className={`h-8 w-8 ${
-                      darkMode 
-                      ? "text-orange-400/65" 
-                      : "text-indigo-500/70"
-                    }`} 
+                  <Icon
+                    className={`h-8 w-8 ${theme.text.main}`}
                   />
                 </div>
 
@@ -61,12 +57,13 @@ export default function About({ darkMode }) {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: "easeOut" }
+        }
         >
           <img
             src={collage}
             alt="Pics of Interest"
-            className="w-40 md:w-72 object-cover shadow-lg"
+            className="w-40 md:w-72 object-cover shadow-lg hover:rotate-5"
           />
         </motion.div>
 

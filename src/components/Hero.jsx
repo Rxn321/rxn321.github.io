@@ -10,7 +10,7 @@ export default function Hero({ darkMode }) {
   return (
     <main
       id="hero"
-      className={`flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-48 md:pt-40 gap-8 md:gap-12 text-center 
+      className={`flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-48 md:pt-32 gap-8 md:gap-12 text-center 
       md:text-left transition-colors duration-500 ${theme.hero.textMain}`}
     >
 
@@ -20,7 +20,7 @@ export default function Hero({ darkMode }) {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="max-w-4xl"
       >
-        <div className="flex flex-row items-center gap-6 md:gap-12 justify-center md:justify-start">
+        <div className="flex flex-row items-center gap-6 md:gap- justify-center md:justify-start">
           {!isMobile && (
             <div
               className={`${theme.hero.cardBg} ${theme.hero.shadow}
