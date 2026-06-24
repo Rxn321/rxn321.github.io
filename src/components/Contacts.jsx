@@ -10,11 +10,11 @@ export default function Contact({ darkMode }) {
       id="contact"
       className={`max-w-4xl mx-auto px-6 text-center transition-colors duration-500 ${textMain}`}
     >
-      <h2 className="text-xl font-semibold mb-6">
+      <h2 className="text-lg font-semibold mb-6">
         Contact
       </h2>
 
-      <div className={`flex flex-col items-center gap-4 ${textMuted}`}>
+      <div className={`flex flex-col items-center gap-2 ${textMuted}`}>
 
         <a href="mailto:liuryanty@gmail.com" className={`${linkHover} transition`}>
           liuryanty@gmail.com
@@ -47,7 +47,7 @@ export default function Contact({ darkMode }) {
           rel="noopener noreferrer"
           className="hover:text-sky-400 transition"
         >
-          Developed by <span className="text-blue-400">Ryan Liu</span> - 2026
+          @ 2026<span className="text-blue-400"> Ryan Liu</span>
         </a>
       </div>
 

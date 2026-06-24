@@ -45,13 +45,14 @@ export default function Navbar({ darkMode }) {
 
         {/* Left icon */}
         <div className={`flex items-center gap-6 ${theme.navbar.main}`}>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a href="https://rxn321.github.io/Portfolio-Blogs/" target="_blank" rel="noopener noreferrer">
             <FaImage size={20} />
           </a>
         </div>
 
         {/* Center NAV */}
-        <div className={`hidden lg:flex absolute left-1/2 -translate-x-3/5 gap-12 text-lg ${theme.navbar.main}`}>
+        <div style={{ fontFamily: "Arial, sans-serif" }}
+          className={`hidden lg:flex absolute left-1/2 -translate-x-3/5 gap-12 text-lg ${theme.navbar.main}`}>
           <NavItem active={active === "hero"} theme={theme} id="hero" label="Home" />
           <NavItem active={active === "about"} theme={theme} id="about" label="About" />
           <NavItem active={active === "projects"} theme={theme} id="projects" label="Projects" />
@@ -60,15 +61,21 @@ export default function Navbar({ darkMode }) {
 
         {/* Right icons */}
         <div className={`flex items-center gap-5 ${theme.navbar.main}`}>
-          <a href="https://github.com/Rxn321">
+          <a href="https://github.com/Rxn321"
+            target="_blank"
+            rel="noopener noreferrer">
             <AiFillGithub size={22} />
           </a>
 
-          <a href="https://www.linkedin.com/in/ryantyl/">
+          <a href="https://www.linkedin.com/in/ryantyl/"            
+            target="_blank"
+            rel="noopener noreferrer">
             <FaLinkedin size={22} />
           </a>
 
-          <a href="mailto:ryantyl@gmail.com">
+          <a href="mailto:ryantyl@gmail.com"            
+            target="_blank"
+            rel="noopener noreferrer">
             <MdEmail size={22} />
           </a>
         </div>

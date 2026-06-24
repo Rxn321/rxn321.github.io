@@ -1,6 +1,6 @@
 export const getTheme = (darkMode) => ({
   text: {
-    main: darkMode ? "text-white/90" : "text-black/90",
+    main: darkMode ? "text-white/90" : "text-black/80",
     muted: darkMode ? "text-white/80" : "text-black/70",
     strong: darkMode ? "text-white" : "text-black",
     gradientText: darkMode
@@ -8,14 +8,14 @@ export const getTheme = (darkMode) => ({
   : "bg-gradient-to-r from-blue-400 to-purple-600/40 bg-clip-text text-transparent",
   },
   navbar: {
-    main: darkMode ? "text-white" : "text-black",
-    muted: darkMode ? "text-white" : "text-black",
+    main: darkMode ? "text-white" : "text-gray-700",
+    muted: darkMode ? "text-white" : "text-gray-700",
     circle: darkMode ? "bg-orange-300" : "bg-indigo-400",
   },
   hero: {
     cardBg: darkMode ? "bg-white" : "bg-white",
     shadow: darkMode ? "shadow-xl" : "shadow-md",
-    textMain: darkMode ? "text-white/90" : "text-black/90",
+    textMain: darkMode ? "text-white/90" : "text-black/80",
     textMuted: darkMode ? "text-white/80" : "text-black/70",
     gradientText: darkMode
   ? "bg-gradient-to-r from-amber-300 to-orange-400/90 bg-clip-text text-transparent"
