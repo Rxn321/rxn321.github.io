@@ -20,11 +20,21 @@
 }
 
 html, body {
-  font-family: system-ui;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   height: 100%;
   color: rgb(169, 169, 169);
+}
+
+p {
+  font-family: "Georgia", serif;
+}
+span {
+  font-family: "Georgia", serif;
+}
+ul {
+  font-family: "Georgia", serif;
 }
 
 /* Smooth scrolling */

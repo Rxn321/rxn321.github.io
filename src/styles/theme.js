@@ -7,6 +7,11 @@ export const getTheme = (darkMode) => ({
   ? "bg-gradient-to-r from-orange-300 to-red-500/70 bg-clip-text text-transparent"
   : "bg-gradient-to-r from-blue-400 to-purple-600/40 bg-clip-text text-transparent",
   },
+  navbar: {
+    main: darkMode ? "text-white" : "text-gray-500",
+    muted: darkMode ? "text-white" : "text-gray-500",
+    circle: darkMode ? "bg-orange-300" : "bg-indigo-400",
+  },
   hero: {
     cardBg: darkMode ? "bg-white" : "bg-white",
     shadow: darkMode ? "shadow-xl" : "shadow-md",

@@ -49,7 +49,7 @@ export default function About({ darkMode }) {
                   <div
                     className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 ${theme.hero.shadow}`}
                   >
-                    <Icon className={`h-8 w-8 ${darkMode ? "text-orange-400/70" : "text-indigo-500/70"}`} />
+                    <Icon className={`h-8 w-8 ${darkMode ? "text-orange-400/65" : "text-indigo-500/70"}`} />
                   </div>
 
                   <span className={`text-sm ${theme.text.muted}`}>
@@ -83,7 +83,7 @@ export default function About({ darkMode }) {
           </motion.div>
 
           {/* LIST */}
-          <ul className="list-disc pl-5 space-y-4 text-left w-full md:flex-1">
+          <ul className="list-none pl-5 space-y-4 text-left w-full md:flex-1">
             {hobby.map((item, i) => (
               <motion.li
                 key={i}
@@ -95,7 +95,7 @@ export default function About({ darkMode }) {
                   delay: i * 0.1,
                   ease: "easeOut",
                 }}
-                className={`leading-relaxed text-lg text-middle text-center md:text-left list-none md:list-disc ${theme.text.main} `}
+                className={`before:content-['✦'] before:mr-3 leading-relaxed text-lg text-center md:text-left ${theme.text.main}`}
               >
                 {item.text}
               </motion.li>

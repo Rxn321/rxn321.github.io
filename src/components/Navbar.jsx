@@ -40,18 +40,18 @@ export default function Navbar({ darkMode }) {
         rounded-full backdrop-blur-xl
         border px-6 md:px-10 py-4 md:py-6
         w-[95%] max-w-4xl transition-colors duration-500
-        ${theme.ui.bg} ${theme.ui.border} ${theme.text.main}`}
+        ${theme.ui.bg} ${theme.ui.border} ${theme.navbar.muted}`}
       >
 
         {/* Left icon */}
-        <div className={`flex items-center gap-6 ${theme.text.muted}`}>
+        <div className={`flex items-center gap-6 ${theme.navbar.main}`}>
           <a href="" target="_blank" rel="noopener noreferrer">
             <FaImage size={20} />
           </a>
         </div>
 
         {/* Center NAV */}
-        <div className={`hidden lg:flex absolute left-1/2 -translate-x-3/5 gap-12 text-lg ${theme.text.muted}`}>
+        <div className={`hidden lg:flex absolute left-1/2 -translate-x-3/5 gap-12 text-lg ${theme.navbar.main}`}>
           <NavItem active={active === "hero"} theme={theme} id="hero" label="Home" />
           <NavItem active={active === "about"} theme={theme} id="about" label="About" />
           <NavItem active={active === "projects"} theme={theme} id="projects" label="Projects" />
@@ -59,7 +59,7 @@ export default function Navbar({ darkMode }) {
         </div>
 
         {/* Right icons */}
-        <div className={`flex items-center gap-5 ${theme.text.muted}`}>
+        <div className={`flex items-center gap-5 ${theme.navbar.main}`}>
           <a href="https://github.com/Rxn321">
             <AiFillGithub size={22} />
           </a>
@@ -84,11 +84,11 @@ function NavItem({ active, theme, id, label }) {
       {active && (
         <motion.div
           layoutId="nav-circle"
-          className={`absolute -bottom-3 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full ${theme.ui.dot} shadow-[0_0_10px_rgba(255,255,255,0.7)] animate-pulse`}
+          className={`absolute -bottom-3 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full ${theme.navbar.circle} shadow-[0_0_10px_rgba(255,255,255,0.7)] animate-pulse`}
         />
       )}
 
-      <a href={`#${id}`} className="hover:opacity-100 opacity-80 transition">
+      <a href={`#${id}`} className="hover:opacity-75 opacity-100 transition">
         {label}
       </a>
     </div>
