@@ -20,7 +20,7 @@ export default function Hero({ darkMode }) {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="max-w-4xl"
       >
-        <div className="flex flex-row items-center gap-6 md:gap- justify-center md:justify-start">
+        <div className="flex flex-row items-center gap-6 md:gap-20 justify-center md:justify-start">
           {!isMobile && (
             <div
               className={`${theme.hero.cardBg} ${theme.hero.shadow}

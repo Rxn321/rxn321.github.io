@@ -48,7 +48,7 @@ export default function About({ darkMode }) {
 
 
       {/* IMAGE + TEXT CONTAINER */}
-      <div className="grid md:grid-cols-2 items-center gap-12 pt-10">
+      <div className="grid md:grid-cols-2 items-center gap-4 pt-10">
 
 
         {/* IMAGE LEFT */}
@@ -73,7 +73,7 @@ export default function About({ darkMode }) {
 
 
           {/* CURRENTLY */}
-          <div>
+          <div className="text-center md:text-left">
             <h2 className={`text-3xl font-semibold leading-normal ${theme.text.gradientText}`}>
               Currently...
             </h2>
@@ -91,7 +91,7 @@ export default function About({ darkMode }) {
 
 
           {/* INTERESTS */}
-          <div>
+          <div className="text-center md:text-left">
             <h2 className={`text-3xl font-semibold leading-normal ${theme.text.gradientText}`}>
               Interests...
             </h2>
@@ -119,9 +119,7 @@ export default function About({ darkMode }) {
               ))}
 
             </ul>
-
           </div>
-
 
         </div>
 
