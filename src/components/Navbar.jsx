@@ -45,7 +45,7 @@ export default function Navbar({ darkMode }) {
 
         {/* Left icon */}
         <div className={`flex items-center gap-6 ${theme.navbar.main}`}>
-          <a href="https://portfolio-blogs-ryantyls-project1.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <a href="https://portfolio-blogs-phi.vercel.app/" target="_blank" rel="noopener noreferrer">
             <FaImage size={20} />
           </a>
         </div>
