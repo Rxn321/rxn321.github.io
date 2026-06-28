@@ -60,7 +60,7 @@ export default function Projects({ darkMode }) {
   return (
     <section
       id="projects"
-      className={`max-w-6xl mx-auto px-6 pt-32 space-y-10 ${theme.text.main}`}
+      className={`w-full mx-auto px-6 pt-28 pb-28 space-y-10 ${theme.text.main}`}
     >
       <h2 className={`text-3xl font-semibold leading-normal text-center ${theme.text.gradientText}`}>
         Projects
@@ -75,7 +75,7 @@ export default function Projects({ darkMode }) {
             onDragEnd={handleSwipe}
             className={`
               w-[80%]
-              h-[640px]
+              h-[100%]
               rounded-2xl
               border
               backdrop-blur-md

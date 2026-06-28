@@ -79,7 +79,7 @@ function App() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col gap-40 md:gap-72">
+      <div className="relative z-20 flex flex-col gap-40">
         <Hero darkMode={darkMode} />
         <About darkMode={darkMode} />
         <Projects darkMode={darkMode} />

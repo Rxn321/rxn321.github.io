@@ -10,7 +10,7 @@ export default function Hero({ darkMode }) {
   return (
     <main
       id="hero"
-      className={`flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-48 md:pt-32 gap-8 md:gap-12 text-center 
+      className={`flex flex-col md:flex-row items-center justify-center min-h-[70vh] px-6 pt-48 gap-8 md:gap-12 text-center 
       md:text-left transition-colors duration-500 ${theme.hero.textMain}`}
     >
 

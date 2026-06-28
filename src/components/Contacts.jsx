@@ -8,7 +8,7 @@ export default function Contact({ darkMode }) {
   return (
     <section
       id="contact"
-      className={`max-w-4xl mx-auto px-6 text-center transition-colors duration-500 ${textMain}`}
+      className={`w-full mx-auto pt-2 text-center transition-colors duration-500 ${textMain}`}
     >
       <h2 className="text-lg font-semibold mb-6">
         Contact

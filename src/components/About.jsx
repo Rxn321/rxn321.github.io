@@ -10,7 +10,7 @@ export default function About({ darkMode }) {
   return (
     <section
       id="about"
-      className={`w-full max-w-4xl mx-auto px-4 sm:px-6 pt-16 md:pt-30 space-y-6 overflow-x-hidden overflow-y-visible transition-colors duration-500 ${theme.text.main}`}
+      className={`w-full mx-auto px-4 sm:px-6 pt-28 pb-28 space-y-6 overflow-x-hidden overflow-y-visible transition-colors duration-500 ${theme.text.main}`}
     >
 
       {/* SKILLS FIRST */}
