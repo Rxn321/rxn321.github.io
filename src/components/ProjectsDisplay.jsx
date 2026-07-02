@@ -11,17 +11,9 @@ export default function Projects({ darkMode }) {
   const [active, setActive] = useState(0)
   const intervalRef = useRef(null)
   useEffect(() => {
-    startInterval()
+    resetInterval()
     return () => clearInterval(intervalRef.current)
   }, [])
-
-  const startInterval = () => {
-    clearInterval(intervalRef.current)
-
-    intervalRef.current = setInterval(() => {
-      setActive((prev) => (prev + 1) % projects.length)
-    }, 4000)
-  }
 
   const pauseInterval = () => {
     clearInterval(intervalRef.current)
@@ -133,7 +125,7 @@ export default function Projects({ darkMode }) {
         </div>
       ) : (
 
-      <div className={`flex items-center gap-8  ${isMobile ? "flex-col" : "flex-row justify-center"}`}>
+      <div className={`flex items-center gap-8 ${isMobile ? "flex-col" : "flex-row justify-center"}`}>
         {[-1, 0, 1].map((offset) => {
           const index = getIndex(offset)
           const isCenter = offset === 0
@@ -142,13 +134,9 @@ export default function Projects({ darkMode }) {
           return (
             <motion.div
               key={project.title}
-              onClick={() => {setActive(index); startInterval()}}
+              onClick={() => {setActive(index); resetInterval()}}
               onMouseEnter={pauseInterval}
-              onMouseLeave={startInterval}
-              whileHover={{
-                scale: 1.02,
-                y: 8,
-              }}
+              onMouseLeave={resetInterval}
               animate={{
                 scale: isMobile ? 1 : (isCenter ? 1 : 1),
                 opacity: isMobile ? 1 : (isCenter ? 1 : 1),
@@ -160,7 +148,6 @@ export default function Projects({ darkMode }) {
                 h-[560px]
                 rounded-2xl
                 border
-                backdrop-blur-md
                 cursor-pointer
                 overflow-hidden
                 transition-all duration-500

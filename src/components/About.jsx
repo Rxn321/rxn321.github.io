@@ -63,7 +63,7 @@ export default function About({ darkMode }) {
           <img
             src={collage}
             alt="Pics of Interest"
-            className="w-40 md:w-72 object-cover shadow-lg hover:rotate-5"
+            className="w-40 md:w-72 object-cover shadow-lg hover:scale-105 transition-transform duration-300 rounded-sm"
           />
         </motion.div>
 
