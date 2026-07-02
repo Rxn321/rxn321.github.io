@@ -133,7 +133,7 @@ export default function Projects({ darkMode }) {
         </div>
       ) : (
 
-      <div className={`flex items-center gap-8 ${isMobile ? "flex-col" : "flex-row justify-center"}`}>
+      <div className={`flex items-center gap-8  ${isMobile ? "flex-col" : "flex-row justify-center"}`}>
         {[-1, 0, 1].map((offset) => {
           const index = getIndex(offset)
           const isCenter = offset === 0
@@ -145,6 +145,10 @@ export default function Projects({ darkMode }) {
               onClick={() => {setActive(index); startInterval()}}
               onMouseEnter={pauseInterval}
               onMouseLeave={startInterval}
+              whileHover={{
+                scale: 1.02,
+                y: 8,
+              }}
               animate={{
                 scale: isMobile ? 1 : (isCenter ? 1 : 1),
                 opacity: isMobile ? 1 : (isCenter ? 1 : 1),

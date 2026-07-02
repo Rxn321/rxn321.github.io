@@ -2,7 +2,8 @@ import rocket from "../assets/cloudburst.JPG"
 import portfolio from "../assets/snow-1.PNG"
 import finance from "../assets/cloudburst.JPG"
 import optimize from "../assets/optimization_output.png"
-import physic from "../assets/hero.png"
+import physic from "../assets/engineV0.1.png"
+
 
 // edit desc soon
 export const projects = [
@@ -23,8 +24,10 @@ export const projects = [
   },
   {
     title: "Physics Engine",
-  desc: `⚠️IN PROGRESS⚠️ 2D physics engine in Python simulating rigid body dynamics, collision detection, and response.`,
-    tags: ["Python", "TypeScript"],
+  desc: `A real-time 2D physics engine and renderer built in C++ 
+  and OpenGL. Features body collisions, gravity, and click to spawn. 
+  Using hand-written vectors, collision math, and orthographic projection. Base of my next project.`,
+    tags: ["C++", "OpenGL", "CMAKE"],
     img: physic,
     link: "https://github.com/Rxn321/2D-Physics-Engine.git",
   },
