@@ -11,7 +11,7 @@ export const projects = [
     desc: `A visual collection of the things I've been building, exploring, and enjoying.`,
     tags: [ "TypeScript", "Tailwind", "Frontend", "UI/UX"],
     img: portfolio,
-    link: "https://portfolio-blogs-phi.vercel.app/",
+    link: "https://ryntyl-blog.vercel.app/",
   },
   {
     title: "Portfolio Optimization",
