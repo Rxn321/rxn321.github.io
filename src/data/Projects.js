@@ -2,7 +2,7 @@ import rocket from "../assets/rocket.avif"
 import portfolio from "../assets/sb.avif"
 import optimize from "../assets/optimization.avif"
 import physic from "../assets/physicsEngineV0.2.avif"
-import temp from "../assets/IMG_6516.avif"
+import temp from "../assets/openRocket.avif"
 
 
 export const projects = [
