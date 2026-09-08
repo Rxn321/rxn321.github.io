@@ -14,7 +14,7 @@ export default function Hero({ darkMode }) {
           className={`relative flex flex-col md:flex-row items-center justify-center
           min-h-screen px-6 gap-8 md:gap-12 text-center md:text-left
           bg-cover bg-center bg-no-repeat
-          transition-colors duration-500 ${theme.hero.textMain}`}
+          transition-colors duration-500 ${!isMobile ? "bg-fixed" : ""} ${theme.hero.textMain}`}
           style={{
             backgroundImage: `url(${heroBg})`,
           }}
