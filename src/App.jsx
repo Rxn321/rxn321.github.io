@@ -6,11 +6,15 @@ import About from './components/About'
 import Projects from "./components/ProjectsDisplay"
 import Contacts from './components/Contacts'
 import Toggle from './components/Toggle'
+import ParticleBackground from "./components/ParticleBackground"
+
 
 function App() {
   const [scrolledPast, setScrolledPast] = useState(false)
   const [scrolledBottom, setScrolledBottom] = useState(false)
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(() =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
 
   const toggleTheme = () => {
     setDarkMode(prev => !prev)
@@ -49,9 +53,12 @@ function App() {
         }`}
       />
 
-      {/*Top Overlay */}
+      {/* Particle Background */}
+      <ParticleBackground darkMode={darkMode} />
+
+      {/*** Top Overlay 
       <motion.div
-        className={`fixed inset-0 z-10 bg-gradient-to-b ${
+        className={`fixed inset-5 z-10 bg-gradient-to-b ${
           darkMode
             ? "from-orange-300/40 via-zinc-600/30 to-neutral-700/5"
             : "from-indigo-300/40 via-white/30 to-white/5"
@@ -70,6 +77,8 @@ function App() {
           transformOrigin: "top"
         }}
       />
+      ***/}
+
       {/* Navbar */}
       <div className="fixed top-6 left-0 w-full z-50 flex justify-center">
         <div className="relative flex items-center justify-between w-[95%] max-w-4xl">
@@ -85,6 +94,7 @@ function App() {
         <Projects darkMode={darkMode} />
         <Contacts darkMode={darkMode} />
       </div>
+
       {/* Bot Overlay */}
       <motion.div
         className={`fixed inset-0 z-10 bg-gradient-to-b ${

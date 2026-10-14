@@ -3,17 +3,22 @@ import { motion } from "framer-motion"
 import { getTheme } from "../styles/theme"
 import { projects } from "../data/Projects"
 import useIsMobile from "../styles/mobile"
+import { TiMediaPauseOutline } from "react-icons/ti";
 
 export default function Projects({ darkMode }) {
   
   const theme = getTheme(darkMode)
   const isMobile = useIsMobile();
   const [active, setActive] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+
   const intervalRef = useRef(null)
   useEffect(() => {
-    resetInterval()
+    if (!isMobile) {
+      resetInterval()
+    }
     return () => clearInterval(intervalRef.current)
-  }, [])
+  }, [isMobile])
 
   const pauseInterval = () => {
     clearInterval(intervalRef.current)
@@ -24,7 +29,7 @@ export default function Projects({ darkMode }) {
 
     intervalRef.current = setInterval(() => {
       setActive((prev) => (prev + 1) % projects.length)
-    }, 4000)
+    }, 2000)
   }
 
 
@@ -54,9 +59,19 @@ export default function Projects({ darkMode }) {
       id="projects"
       className={`w-full mx-auto px-6 pt-28 pb-28 space-y-10 ${theme.text.main}`}
     >
-      <h2 className={`text-3xl font-semibold leading-normal text-center ${theme.text.gradientText}`}>
+    <div className="relative flex justify-center">
+      <h2
+        className={`text-3xl font-semibold leading-normal ${theme.text.gradientText}`}
+      >
         Projects
       </h2>
+      {isPaused && (
+        <TiMediaPauseOutline
+          className="absolute left-[calc(50%+65px)] top-1/2 -translate-y-1/2 text-2xl"
+        />
+      )}
+    </div>
+
 {/* MOBILE SWIPE */}     
       {isMobile ? (
         <div className="flex justify-center">
@@ -135,8 +150,14 @@ export default function Projects({ darkMode }) {
             <motion.div
               key={project.title}
               onClick={() => {setActive(index); resetInterval()}}
-              onMouseEnter={pauseInterval}
-              onMouseLeave={resetInterval}
+              onMouseEnter={() => {
+                pauseInterval() 
+                setIsPaused(true)
+              }}
+              onMouseLeave={() => {
+                resetInterval()
+                setIsPaused(false)
+              }}
               animate={{
                 scale: isMobile ? 1 : (isCenter ? 1 : 1),
                 opacity: isMobile ? 1 : (isCenter ? 1 : 1),

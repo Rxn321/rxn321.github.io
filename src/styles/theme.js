@@ -16,13 +16,13 @@ export const getTheme = (darkMode) => ({
     cardBg: darkMode ? "bg-white" : "bg-white",
     shadow: darkMode ? "shadow-xl" : "shadow-md",
     textMain: darkMode ? "text-white/90" : "text-black/70",
-    textMuted: darkMode ? "text-white/80" : "text-black/70",
+    textMuted: darkMode ? "text-white/90" : "text-black/90",
     gradientText: darkMode
   ? "bg-gradient-to-r from-amber-300 to-orange-400/90 bg-clip-text text-transparent"
   : "bg-gradient-to-r from-blue-400 to-indigo-600/70 bg-clip-text text-transparent",
   },
   card: {
-    bg: darkMode ? "bg-white/5" : "bg-black/5",
+    bg: darkMode ? "bg-stone-600/60" : "bg-slate-200/60",
     hoverBg: darkMode ? "hover:bg-white/10" : "hover:bg-black/10",
     border: darkMode ? "border-white/10" : "border-black/10",
     shadow: darkMode ? "shadow-xl" : "shadow-md",
