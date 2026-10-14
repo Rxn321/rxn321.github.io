@@ -7,6 +7,13 @@ import temp from "../assets/openRocket.avif"
 
 export const projects = [
   {
+    title: "📍Moments📍",
+    desc: `A visual collection of the things I've been building, exploring, and enjoying.`,
+    tags: [ "TypeScript", "React", "UI/UX"],
+    img: portfolio,
+    link: "https://ryntyl-blog.vercel.app/",
+  },
+  {
     title: "Portfolio Optimization",
     desc: `A Python/Streamlit portfolio analysis application that retrieves historical market data,
     applies statistical analysis and Monte Carlo simulations, and uses mathematical optimization to evaluate portfolio allocations and risk.`,
