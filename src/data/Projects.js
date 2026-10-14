@@ -7,15 +7,8 @@ import temp from "../assets/openRocket.avif"
 
 export const projects = [
   {
-    title: "📍Moments📍",
-    desc: `A visual collection of the things I've been building, exploring, and enjoying.`,
-    tags: [ "TypeScript", "React", "UI/UX"],
-    img: portfolio,
-    link: "https://ryntyl-blog.vercel.app/",
-  },
-  {
     title: "Portfolio Optimization",
-    desc: `A Python/Streamlit portfolio analysis application that retrieves historical market data,
+    desc: `Learning Project, A Python/Streamlit portfolio analysis application that retrieves historical market data,
     applies statistical analysis and Monte Carlo simulations, and uses mathematical optimization to evaluate portfolio allocations and risk.`,
     tags: ["Python",  "Data Analysis", "Monte Carlo", "Portfolio Theory"],
     img: optimize,
@@ -23,7 +16,7 @@ export const projects = [
   },
   {
     title: "Physics Engine",
-    desc: `A C++/OpenGL physics engine simulating N-body gravitational interactions and orbital motion using Newtonian gravity, 
+    desc: `Learning Project, A C++/OpenGL physics engine simulating N-body gravitational interactions and orbital motion using Newtonian gravity, 
     semi-implicit Euler integration, and vector mathematics, with real-time 3D visualization of gravity wells and particle trails.`,
     tags: ["C++", "OpenGL", "Physics Simulation", "Numerical Methods"],
     img: physic,
@@ -31,7 +24,7 @@ export const projects = [
   },
   {
     title: "UBC Rocket",
-    desc: `Designed and manufactured structural rocket components for UBC Rocket's competition rocket Cloudburst. 
+    desc: `Club Project, Designed and manufactured structural rocket components for UBC Rocket's competition rocket Cloudburst. 
     Cloudburst placed 5th in the 30K COTS category at the 2026 International Rocket Engineering Competition (IREC), 
     the world's largest collegiate rocket engineering competition.`,    
     tags: ["CAD", "FEA", "Competition", "Manufacturing"],
