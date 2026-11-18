@@ -49,7 +49,7 @@ export default function ParticleBackground({
 
     const colors = darkMode ? ["#ffffff"] : ["#555555"];
 
-    const PARTICLE_COUNT = isMobile ? 7 : 15;
+    const PARTICLE_COUNT = isMobile ? 7 : 30;
     const TRAIL_LENGTH = isMobile ? 30 : 60;
 
     const G = 1000
