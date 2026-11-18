@@ -72,7 +72,7 @@ export default function ParticleBackground({
       const maxRadius = Math.min(
         canvas.width,
         canvas.height
-      ) * 0.7;
+      ) * 1;
 
       const minRadius = Math.min(
         400,
