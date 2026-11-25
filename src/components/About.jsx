@@ -229,7 +229,7 @@ export default function About({ darkMode }) {
           {/* Interests */}
           <div className="text-center md:text-left">
             <h2 className={`text-3xl font-semibold leading-normal ${theme.text.gradientText}`}>
-              Interests...
+              I like...
             </h2>
 
             <ul className="list-none space-y-4">

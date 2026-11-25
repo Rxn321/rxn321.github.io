@@ -18,26 +18,28 @@ export const currently = [
     text: "Internal Structure Designer @ UBC Rocket",
   },
   {
+    text: "Turbopump system analyst @ Launch Canada",
+  },
+  {
     text: "Finance Manager @ UBC TA",
   },
 ]
 export const hobby = [
   {
-    text: "Space Systems🛰️",
+    text: "Mountains",
   },
   {
-    text: "System Modeling & Simulation🌌",
+    text: "Rocketry",
   },
   {
-    text: "Machine Learning👾",
+    text: "Technology",
   },
   {
-    text: "Snowboarding🏂",
+    text: "Drones",
   },
   {
-    text: "Hiking⛰️",
+    text: "Mathematics",
   },
-
 ]
 export const skills = [
   { name: "C++", icon: SiCplusplus },
