@@ -26,10 +26,11 @@ export default function Hero({ darkMode }) {
 
       <div className = "relative z-10"> 
         <h1 className="text-4xl md:text-6xl tracking-tight">
-          Hey, I'm
+          Hey
           <span className="inline-block origin-[70%_70%] animate-[wave_1.5s_ease-in-out_infinite] ml-2">
-            👋
+           👋
           </span>
+            I'm 
         </h1>
 
         <h1 className={`text-5xl md:text-7xl text-transparent pb-4 ${theme.hero.gradientText}`}>
